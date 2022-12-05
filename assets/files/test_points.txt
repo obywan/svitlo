@@ -1,0 +1,2540 @@
+[
+    {
+        "hostid": "10385",
+        "host": "kopernika-interavia",
+        "graph_url": "/static/graph/34245-graph.png",
+        "inventory_location_lat": "49.5532454403917",
+        "inventory_location_lon": "25.5977252142771",
+        "history": [
+            {
+                "itemid": "34245",
+                "clock": "1670056562",
+                "value": "1",
+                "ns": "693328138"
+            },
+            {
+                "itemid": "34245",
+                "clock": "1670056622",
+                "value": "1",
+                "ns": "742679121"
+            },
+            {
+                "itemid": "34245",
+                "clock": "1670056682",
+                "value": "1",
+                "ns": "788135965"
+            }
+        ]
+    },
+    {
+        "hostid": "10408",
+        "host": "camera-avtovokzal-face",
+        "graph_url": "/static/graph/35571-graph.png",
+        "inventory_location_lat": "49.54400",
+        "inventory_location_lon": "25.59685",
+        "history": [
+            {
+                "itemid": "35571",
+                "clock": "1670056585",
+                "value": "1",
+                "ns": "710885879"
+            },
+            {
+                "itemid": "35571",
+                "clock": "1670056645",
+                "value": "1",
+                "ns": "755011097"
+            },
+            {
+                "itemid": "35571",
+                "clock": "1670056705",
+                "value": "1",
+                "ns": "804435438"
+            }
+        ]
+    },
+    {
+        "hostid": "10425",
+        "host": "camera-kurbasa-6",
+        "graph_url": "/static/graph/39269-graph.png",
+        "inventory_location_lat": "49.5717",
+        "inventory_location_lon": "25.6416",
+        "history": [
+            {
+                "itemid": "39269",
+                "clock": "1670056609",
+                "value": "0",
+                "ns": "734937740"
+            },
+            {
+                "itemid": "39269",
+                "clock": "1670056669",
+                "value": "0",
+                "ns": "779750551"
+            },
+            {
+                "itemid": "39269",
+                "clock": "1670056729",
+                "value": "0",
+                "ns": "826199049"
+            }
+        ]
+    },
+    {
+        "hostid": "10426",
+        "host": "camera-tarnavskogo-8",
+        "graph_url": "/static/graph/39299-graph.png",
+        "inventory_location_lat": "49.5635",
+        "inventory_location_lon": "25.6305",
+        "history": [
+            {
+                "itemid": "39299",
+                "clock": "1670056610",
+                "value": "0",
+                "ns": "735354839"
+            },
+            {
+                "itemid": "39299",
+                "clock": "1670056670",
+                "value": "0",
+                "ns": "780048902"
+            },
+            {
+                "itemid": "39299",
+                "clock": "1670056730",
+                "value": "0",
+                "ns": "826473871"
+            }
+        ]
+    },
+    {
+        "hostid": "10427",
+        "host": "camera-volodymyra-velykogo-4",
+        "graph_url": "/static/graph/39302-graph.png",
+        "inventory_location_lat": "49.5702",
+        "inventory_location_lon": "25.6398",
+        "history": [
+            {
+                "itemid": "39302",
+                "clock": "1670056611",
+                "value": "0",
+                "ns": "736787941"
+            },
+            {
+                "itemid": "39302",
+                "clock": "1670056671",
+                "value": "0",
+                "ns": "781358628"
+            },
+            {
+                "itemid": "39302",
+                "clock": "1670056731",
+                "value": "0",
+                "ns": "826910949"
+            }
+        ]
+    },
+    {
+        "hostid": "10428",
+        "host": "camera-prosvity-19",
+        "graph_url": "/static/graph/39305-graph.png",
+        "inventory_location_lat": "49.544",
+        "inventory_location_lon": "25.5614",
+        "history": [
+            {
+                "itemid": "39305",
+                "clock": "1670056612",
+                "value": "1",
+                "ns": "737382195"
+            },
+            {
+                "itemid": "39305",
+                "clock": "1670056672",
+                "value": "1",
+                "ns": "782051849"
+            },
+            {
+                "itemid": "39305",
+                "clock": "1670056732",
+                "value": "1",
+                "ns": "828453469"
+            }
+        ]
+    },
+    {
+        "hostid": "10429",
+        "host": "router-petrykiv-slovyanska",
+        "graph_url": "/static/graph/39407-graph.png",
+        "inventory_location_lat": "49.5342",
+        "inventory_location_lon": "25.566",
+        "history": [
+            {
+                "itemid": "39407",
+                "clock": "1670056613",
+                "value": "1",
+                "ns": "738058907"
+            },
+            {
+                "itemid": "39407",
+                "clock": "1670056673",
+                "value": "1",
+                "ns": "781433745"
+            },
+            {
+                "itemid": "39407",
+                "clock": "1670056733",
+                "value": "1",
+                "ns": "828224964"
+            }
+        ]
+    },
+    {
+        "hostid": "10430",
+        "host": "camera-yaremy-12",
+        "graph_url": "/static/graph/39410-graph.png",
+        "inventory_location_lat": "49.571642",
+        "inventory_location_lon": "25.630552",
+        "history": [
+            {
+                "itemid": "39410",
+                "clock": "1670056614",
+                "value": "1",
+                "ns": "738527114"
+            },
+            {
+                "itemid": "39410",
+                "clock": "1670056674",
+                "value": "1",
+                "ns": "782792299"
+            },
+            {
+                "itemid": "39410",
+                "clock": "1670056734",
+                "value": "1",
+                "ns": "829027113"
+            }
+        ]
+    },
+    {
+        "hostid": "10431",
+        "host": "camera-berezhanska-55",
+        "graph_url": "/static/graph/39413-graph.png",
+        "inventory_location_lat": "49.54824",
+        "inventory_location_lon": "25.55193",
+        "history": [
+            {
+                "itemid": "39413",
+                "clock": "1670056615",
+                "value": "1",
+                "ns": "739106778"
+            },
+            {
+                "itemid": "39413",
+                "clock": "1670056675",
+                "value": "1",
+                "ns": "783136529"
+            },
+            {
+                "itemid": "39413",
+                "clock": "1670056735",
+                "value": "1",
+                "ns": "829506660"
+            }
+        ]
+    },
+    {
+        "hostid": "10432",
+        "host": "camera-brovarna-47",
+        "graph_url": "/static/graph/39416-graph.png",
+        "inventory_location_lat": "49.56157",
+        "inventory_location_lon": "25.58771",
+        "history": [
+            {
+                "itemid": "39416",
+                "clock": "1670056616",
+                "value": "1",
+                "ns": "739534947"
+            },
+            {
+                "itemid": "39416",
+                "clock": "1670056676",
+                "value": "1",
+                "ns": "783436311"
+            },
+            {
+                "itemid": "39416",
+                "clock": "1670056736",
+                "value": "1",
+                "ns": "830007206"
+            }
+        ]
+    },
+    {
+        "hostid": "10433",
+        "host": "camera-textylna-2",
+        "graph_url": "/static/graph/39419-graph.png",
+        "inventory_location_lat": "49.56325",
+        "inventory_location_lon": "25.61153",
+        "history": [
+            {
+                "itemid": "39419",
+                "clock": "1670056617",
+                "value": "1",
+                "ns": "739877727"
+            },
+            {
+                "itemid": "39419",
+                "clock": "1670056677",
+                "value": "1",
+                "ns": "783699383"
+            },
+            {
+                "itemid": "39419",
+                "clock": "1670056737",
+                "value": "1",
+                "ns": "830259419"
+            }
+        ]
+    },
+    {
+        "hostid": "10434",
+        "host": "camera-chernivecka-64",
+        "graph_url": "/static/graph/39422-graph.png",
+        "inventory_location_lat": "49.53480",
+        "inventory_location_lon": "25.60217",
+        "history": [
+            {
+                "itemid": "39422",
+                "clock": "1670056618",
+                "value": "1",
+                "ns": "740145309"
+            },
+            {
+                "itemid": "39422",
+                "clock": "1670056678",
+                "value": "1",
+                "ns": "784912981"
+            },
+            {
+                "itemid": "39422",
+                "clock": "1670056738",
+                "value": "1",
+                "ns": "831653582"
+            }
+        ]
+    },
+    {
+        "hostid": "10435",
+        "host": "camera-protasevycha-8",
+        "graph_url": "/static/graph/39425-graph.png",
+        "inventory_location_lat": "49.54298",
+        "inventory_location_lon": "25.63289",
+        "history": [
+            {
+                "itemid": "39425",
+                "clock": "1670056619",
+                "value": "1",
+                "ns": "741146293"
+            },
+            {
+                "itemid": "39425",
+                "clock": "1670056679",
+                "value": "1",
+                "ns": "785591443"
+            },
+            {
+                "itemid": "39425",
+                "clock": "1670056739",
+                "value": "1",
+                "ns": "832491010"
+            }
+        ]
+    },
+    {
+        "hostid": "10436",
+        "host": "camera-myru-11",
+        "graph_url": "/static/graph/39428-graph.png",
+        "inventory_location_lat": "49.54428",
+        "inventory_location_lon": "25.58231",
+        "history": [
+            {
+                "itemid": "39428",
+                "clock": "1670056620",
+                "value": "1",
+                "ns": "741539892"
+            },
+            {
+                "itemid": "39428",
+                "clock": "1670056680",
+                "value": "1",
+                "ns": "786685154"
+            },
+            {
+                "itemid": "39428",
+                "clock": "1670056740",
+                "value": "1",
+                "ns": "833091593"
+            }
+        ]
+    },
+    {
+        "hostid": "10437",
+        "host": "camera-symonenka-3",
+        "graph_url": "/static/graph/39431-graph.png",
+        "inventory_location_lat": "49.56908",
+        "inventory_location_lon": "25.64291",
+        "history": [
+            {
+                "itemid": "39431",
+                "clock": "1670056621",
+                "value": "0",
+                "ns": "742411259"
+            },
+            {
+                "itemid": "39431",
+                "clock": "1670056681",
+                "value": "0",
+                "ns": "787247319"
+            },
+            {
+                "itemid": "39431",
+                "clock": "1670056741",
+                "value": "0",
+                "ns": "833579920"
+            }
+        ]
+    },
+    {
+        "hostid": "10438",
+        "host": "camera-symonenka-4",
+        "graph_url": "/static/graph/39434-graph.png",
+        "inventory_location_lat": "49.56808",
+        "inventory_location_lon": "25.64536",
+        "history": [
+            {
+                "itemid": "39434",
+                "clock": "1670056622",
+                "value": "0",
+                "ns": "742679121"
+            },
+            {
+                "itemid": "39434",
+                "clock": "1670056682",
+                "value": "0",
+                "ns": "788135965"
+            },
+            {
+                "itemid": "39434",
+                "clock": "1670056742",
+                "value": "0",
+                "ns": "834009098"
+            }
+        ]
+    },
+    {
+        "hostid": "10439",
+        "host": "camera-khmelnyckogo-21a",
+        "graph_url": "/static/graph/39437-graph.png",
+        "inventory_location_lat": "49.55425",
+        "inventory_location_lon": "25.59845",
+        "history": [
+            {
+                "itemid": "39437",
+                "clock": "1670056623",
+                "value": "1",
+                "ns": "742953354"
+            },
+            {
+                "itemid": "39437",
+                "clock": "1670056683",
+                "value": "1",
+                "ns": "789770262"
+            },
+            {
+                "itemid": "39437",
+                "clock": "1670056743",
+                "value": "1",
+                "ns": "834321750"
+            }
+        ]
+    },
+    {
+        "hostid": "10440",
+        "host": "camera-bandery-47",
+        "graph_url": "/static/graph/39449-graph.png",
+        "inventory_location_lat": "49.55096",
+        "inventory_location_lon": "25.61988",
+        "history": [
+            {
+                "itemid": "39449",
+                "clock": "1670056624",
+                "value": "1",
+                "ns": "743444140"
+            },
+            {
+                "itemid": "39449",
+                "clock": "1670056684",
+                "value": "1",
+                "ns": "790158832"
+            },
+            {
+                "itemid": "39449",
+                "clock": "1670056744",
+                "value": "1",
+                "ns": "834983572"
+            }
+        ]
+    },
+    {
+        "hostid": "10441",
+        "host": "camera-kyivska-1",
+        "graph_url": "/static/graph/39452-graph.png",
+        "inventory_location_lat": "49.56312",
+        "inventory_location_lon": "25.64046",
+        "history": [
+            {
+                "itemid": "39452",
+                "clock": "1670056565",
+                "value": "0",
+                "ns": "695866851"
+            },
+            {
+                "itemid": "39452",
+                "clock": "1670056625",
+                "value": "0",
+                "ns": "743776221"
+            },
+            {
+                "itemid": "39452",
+                "clock": "1670056685",
+                "value": "0",
+                "ns": "790505832"
+            }
+        ]
+    },
+    {
+        "hostid": "10442",
+        "host": "camera-kyivska-11b",
+        "graph_url": "/static/graph/39455-graph.png",
+        "inventory_location_lat": "49.56104",
+        "inventory_location_lon": "25.64457",
+        "history": [
+            {
+                "itemid": "39455",
+                "clock": "1670056566",
+                "value": "0",
+                "ns": "696141803"
+            },
+            {
+                "itemid": "39455",
+                "clock": "1670056626",
+                "value": "0",
+                "ns": "744416364"
+            },
+            {
+                "itemid": "39455",
+                "clock": "1670056686",
+                "value": "0",
+                "ns": "791174314"
+            }
+        ]
+    },
+    {
+        "hostid": "10443",
+        "host": "camera-karpenka-5",
+        "graph_url": "/static/graph/39458-graph.png",
+        "inventory_location_lat": "49.54146",
+        "inventory_location_lon": "25.57668",
+        "history": [
+            {
+                "itemid": "39458",
+                "clock": "1670056567",
+                "value": "1",
+                "ns": "696853414"
+            },
+            {
+                "itemid": "39458",
+                "clock": "1670056627",
+                "value": "1",
+                "ns": "745098625"
+            },
+            {
+                "itemid": "39458",
+                "clock": "1670056687",
+                "value": "1",
+                "ns": "791615342"
+            }
+        ]
+    },
+    {
+        "hostid": "10444",
+        "host": "camera-mazepy-1",
+        "graph_url": "/static/graph/39461-graph.png",
+        "inventory_location_lat": "49.55088",
+        "inventory_location_lon": "25.57233",
+        "history": [
+            {
+                "itemid": "39461",
+                "clock": "1670056568",
+                "value": "1",
+                "ns": "697080227"
+            },
+            {
+                "itemid": "39461",
+                "clock": "1670056628",
+                "value": "1",
+                "ns": "745513874"
+            },
+            {
+                "itemid": "39461",
+                "clock": "1670056688",
+                "value": "1",
+                "ns": "792947637"
+            }
+        ]
+    },
+    {
+        "hostid": "10445",
+        "host": "camera-korolova-10",
+        "graph_url": "/static/graph/39464-graph.png",
+        "inventory_location_lat": "49.55436",
+        "inventory_location_lon": "25.64672",
+        "history": [
+            {
+                "itemid": "39464",
+                "clock": "1670056569",
+                "value": "0",
+                "ns": "697326410"
+            },
+            {
+                "itemid": "39464",
+                "clock": "1670056629",
+                "value": "0",
+                "ns": "745854575"
+            },
+            {
+                "itemid": "39464",
+                "clock": "1670056689",
+                "value": "0",
+                "ns": "793052263"
+            }
+        ]
+    },
+    {
+        "hostid": "10446",
+        "host": "petrykiv-konovalcya",
+        "graph_url": "/static/graph/39476-graph.png",
+        "inventory_location_lat": "49.5366",
+        "inventory_location_lon": "25.5671",
+        "history": [
+            {
+                "itemid": "39476",
+                "clock": "1670056570",
+                "value": "1",
+                "ns": "698028802"
+            },
+            {
+                "itemid": "39476",
+                "clock": "1670056630",
+                "value": "1",
+                "ns": "746220355"
+            },
+            {
+                "itemid": "39476",
+                "clock": "1670056690",
+                "value": "1",
+                "ns": "793478722"
+            }
+        ]
+    },
+    {
+        "hostid": "10447",
+        "host": "router-zagrebelna",
+        "graph_url": "/static/graph/39479-graph.png",
+        "inventory_location_lat": "49.554",
+        "inventory_location_lon": "25.5597",
+        "history": [
+            {
+                "itemid": "39479",
+                "clock": "1670056571",
+                "value": "1",
+                "ns": "698854059"
+            },
+            {
+                "itemid": "39479",
+                "clock": "1670056631",
+                "value": "1",
+                "ns": "746845118"
+            },
+            {
+                "itemid": "39479",
+                "clock": "1670056691",
+                "value": "1",
+                "ns": "793901220"
+            }
+        ]
+    },
+    {
+        "hostid": "10448",
+        "host": "camera-vynnychenka-1",
+        "graph_url": "/static/graph/39482-graph.png",
+        "inventory_location_lat": "49.5449",
+        "inventory_location_lon": "25.5711",
+        "history": [
+            {
+                "itemid": "39482",
+                "clock": "1670056572",
+                "value": "1",
+                "ns": "699478703"
+            },
+            {
+                "itemid": "39482",
+                "clock": "1670056632",
+                "value": "1",
+                "ns": "747110960"
+            },
+            {
+                "itemid": "39482",
+                "clock": "1670056692",
+                "value": "1",
+                "ns": "795698933"
+            }
+        ]
+    },
+    {
+        "hostid": "10449",
+        "host": "camera-galycka-58",
+        "graph_url": "/static/graph/39485-graph.png",
+        "inventory_location_lat": "49.5587",
+        "inventory_location_lon": "25.6196",
+        "history": [
+            {
+                "itemid": "39485",
+                "clock": "1670056573",
+                "value": "0",
+                "ns": "699874092"
+            },
+            {
+                "itemid": "39485",
+                "clock": "1670056633",
+                "value": "0",
+                "ns": "748350247"
+            },
+            {
+                "itemid": "39485",
+                "clock": "1670056693",
+                "value": "0",
+                "ns": "795972955"
+            }
+        ]
+    },
+    {
+        "hostid": "10450",
+        "host": "camera-kryvonosa-3",
+        "graph_url": "/static/graph/39488-graph.png",
+        "inventory_location_lat": "49.5471",
+        "inventory_location_lon": "25.5678",
+        "history": [
+            {
+                "itemid": "39488",
+                "clock": "1670056574",
+                "value": "1",
+                "ns": "700667711"
+            },
+            {
+                "itemid": "39488",
+                "clock": "1670056634",
+                "value": "1",
+                "ns": "748872813"
+            },
+            {
+                "itemid": "39488",
+                "clock": "1670056694",
+                "value": "1",
+                "ns": "796727285"
+            }
+        ]
+    },
+    {
+        "hostid": "10451",
+        "host": "camera-zhyvova-18",
+        "graph_url": "/static/graph/39491-graph.png",
+        "inventory_location_lat": "49.546",
+        "inventory_location_lon": "25.5941",
+        "history": [
+            {
+                "itemid": "39491",
+                "clock": "1670056575",
+                "value": "1",
+                "ns": "701028881"
+            },
+            {
+                "itemid": "39491",
+                "clock": "1670056635",
+                "value": "1",
+                "ns": "749229183"
+            },
+            {
+                "itemid": "39491",
+                "clock": "1670056695",
+                "value": "1",
+                "ns": "796986438"
+            }
+        ]
+    },
+    {
+        "hostid": "10452",
+        "host": "camera-konovalcya-18",
+        "graph_url": "/static/graph/39494-graph.png",
+        "inventory_location_lat": "49.5578",
+        "inventory_location_lon": "25.623",
+        "history": [
+            {
+                "itemid": "39494",
+                "clock": "1670056576",
+                "value": "1",
+                "ns": "702601929"
+            },
+            {
+                "itemid": "39494",
+                "clock": "1670056636",
+                "value": "1",
+                "ns": "749493916"
+            },
+            {
+                "itemid": "39494",
+                "clock": "1670056696",
+                "value": "1",
+                "ns": "797666399"
+            }
+        ]
+    },
+    {
+        "hostid": "10453",
+        "host": "camera-zolotogirska-12",
+        "graph_url": "/static/graph/39497-graph.png",
+        "inventory_location_lat": "49.5622",
+        "inventory_location_lon": "25.5531",
+        "history": [
+            {
+                "itemid": "39497",
+                "clock": "1670056577",
+                "value": "1",
+                "ns": "702955599"
+            },
+            {
+                "itemid": "39497",
+                "clock": "1670056637",
+                "value": "1",
+                "ns": "749739689"
+            },
+            {
+                "itemid": "39497",
+                "clock": "1670056697",
+                "value": "1",
+                "ns": "797903323"
+            }
+        ]
+    },
+    {
+        "hostid": "10454",
+        "host": "petrykiv-sheptyckogo-1x",
+        "graph_url": "/static/graph/39500-graph.png",
+        "inventory_location_lat": "49.5371",
+        "inventory_location_lon": "25.5849",
+        "history": [
+            {
+                "itemid": "39500",
+                "clock": "1670056578",
+                "value": "1",
+                "ns": "704081040"
+            },
+            {
+                "itemid": "39500",
+                "clock": "1670056638",
+                "value": "1",
+                "ns": "750539248"
+            },
+            {
+                "itemid": "39500",
+                "clock": "1670056698",
+                "value": "1",
+                "ns": "798254923"
+            }
+        ]
+    },
+    {
+        "hostid": "10455",
+        "host": "router-ostrozkogo-19",
+        "graph_url": "/static/graph/39512-graph.png",
+        "inventory_location_lat": "49.5489",
+        "inventory_location_lon": "25.5978",
+        "history": [
+            {
+                "itemid": "39512",
+                "clock": "1670056579",
+                "value": "1",
+                "ns": "704503238"
+            },
+            {
+                "itemid": "39512",
+                "clock": "1670056639",
+                "value": "1",
+                "ns": "750918177"
+            },
+            {
+                "itemid": "39512",
+                "clock": "1670056699",
+                "value": "1",
+                "ns": "798549595"
+            }
+        ]
+    },
+    {
+        "hostid": "10456",
+        "host": "camera-guzara-5",
+        "graph_url": "/static/graph/39515-graph.png",
+        "inventory_location_lat": "49.5609",
+        "inventory_location_lon": "25.626",
+        "history": [
+            {
+                "itemid": "39515",
+                "clock": "1670056580",
+                "value": "1",
+                "ns": "705469892"
+            },
+            {
+                "itemid": "39515",
+                "clock": "1670056640",
+                "value": "1",
+                "ns": "751289657"
+            },
+            {
+                "itemid": "39515",
+                "clock": "1670056700",
+                "value": "1",
+                "ns": "798954184"
+            }
+        ]
+    },
+    {
+        "hostid": "10458",
+        "host": "camera-luchakivskogo-5",
+        "graph_url": "/static/graph/39521-graph.png",
+        "inventory_location_lat": "49.548",
+        "inventory_location_lon": "25.5587",
+        "history": [
+            {
+                "itemid": "39521",
+                "clock": "1670056582",
+                "value": "1",
+                "ns": "706418906"
+            },
+            {
+                "itemid": "39521",
+                "clock": "1670056642",
+                "value": "1",
+                "ns": "752353808"
+            },
+            {
+                "itemid": "39521",
+                "clock": "1670056702",
+                "value": "1",
+                "ns": "801511596"
+            }
+        ]
+    },
+    {
+        "hostid": "10459",
+        "host": "router-ornava",
+        "graph_url": "/static/graph/39524-graph.png",
+        "inventory_location_lat": "49.5459",
+        "inventory_location_lon": "25.5892",
+        "history": [
+            {
+                "itemid": "39524",
+                "clock": "1670056583",
+                "value": "1",
+                "ns": "709212653"
+            },
+            {
+                "itemid": "39524",
+                "clock": "1670056643",
+                "value": "1",
+                "ns": "752777256"
+            },
+            {
+                "itemid": "39524",
+                "clock": "1670056703",
+                "value": "1",
+                "ns": "802231367"
+            }
+        ]
+    },
+    {
+        "hostid": "10460",
+        "host": "router-raycentr-15k-5a",
+        "graph_url": "/static/graph/39527-graph.png",
+        "inventory_location_lat": "49.5582",
+        "inventory_location_lon": "25.6422",
+        "history": [
+            {
+                "itemid": "39527",
+                "clock": "1670056584",
+                "value": "0",
+                "ns": "709849936"
+            },
+            {
+                "itemid": "39527",
+                "clock": "1670056644",
+                "value": "0",
+                "ns": "754789914"
+            },
+            {
+                "itemid": "39527",
+                "clock": "1670056704",
+                "value": "0",
+                "ns": "803309738"
+            }
+        ]
+    },
+    {
+        "hostid": "10461",
+        "host": "camera-lvivska-2",
+        "graph_url": "/static/graph/39530-graph.png",
+        "inventory_location_lat": "49.552",
+        "inventory_location_lon": "25.5653",
+        "history": [
+            {
+                "itemid": "39530",
+                "clock": "1670056585",
+                "value": "1",
+                "ns": "710885879"
+            },
+            {
+                "itemid": "39530",
+                "clock": "1670056645",
+                "value": "1",
+                "ns": "755011097"
+            },
+            {
+                "itemid": "39530",
+                "clock": "1670056705",
+                "value": "1",
+                "ns": "804435438"
+            }
+        ]
+    },
+    {
+        "hostid": "10462",
+        "host": "camera-malyshka-1",
+        "graph_url": "/static/graph/39542-graph.png",
+        "inventory_location_lat": "49.5491",
+        "inventory_location_lon": "25.6111",
+        "history": [
+            {
+                "itemid": "39542",
+                "clock": "1670056586",
+                "value": "1",
+                "ns": "712662102"
+            },
+            {
+                "itemid": "39542",
+                "clock": "1670056646",
+                "value": "1",
+                "ns": "755392477"
+            },
+            {
+                "itemid": "39542",
+                "clock": "1670056706",
+                "value": "1",
+                "ns": "804758079"
+            }
+        ]
+    },
+    {
+        "hostid": "10464",
+        "host": "router-berezova-15",
+        "graph_url": "/static/graph/39557-graph.png",
+        "inventory_location_lat": "49.564810",
+        "inventory_location_lon": "25.586858",
+        "history": [
+            {
+                "itemid": "39557",
+                "clock": "1670056588",
+                "value": "1",
+                "ns": "713785372"
+            },
+            {
+                "itemid": "39557",
+                "clock": "1670056648",
+                "value": "1",
+                "ns": "755703567"
+            },
+            {
+                "itemid": "39557",
+                "clock": "1670056708",
+                "value": "1",
+                "ns": "806034945"
+            }
+        ]
+    },
+    {
+        "hostid": "10465",
+        "host": "router-guliver-chernivecka-44b",
+        "graph_url": "/static/graph/39560-graph.png",
+        "inventory_location_lat": "49.53641",
+        "inventory_location_lon": "25.60178",
+        "history": [
+            {
+                "itemid": "39560",
+                "clock": "1670056589",
+                "value": "1",
+                "ns": "714194650"
+            },
+            {
+                "itemid": "39560",
+                "clock": "1670056649",
+                "value": "1",
+                "ns": "755963530"
+            },
+            {
+                "itemid": "39560",
+                "clock": "1670056709",
+                "value": "1",
+                "ns": "806376516"
+            }
+        ]
+    },
+    {
+        "hostid": "10466",
+        "host": "router-agroinvest-konovalcya-11",
+        "graph_url": "/static/graph/39563-graph.png",
+        "inventory_location_lat": "49.55576",
+        "inventory_location_lon": "25.624351",
+        "history": [
+            {
+                "itemid": "39563",
+                "clock": "1670056590",
+                "value": "1",
+                "ns": "715165395"
+            },
+            {
+                "itemid": "39563",
+                "clock": "1670056650",
+                "value": "1",
+                "ns": "756164124"
+            },
+            {
+                "itemid": "39563",
+                "clock": "1670056710",
+                "value": "1",
+                "ns": "807174824"
+            }
+        ]
+    },
+    {
+        "hostid": "10467",
+        "host": "router-bianko-d-galyckogo-4",
+        "graph_url": "/static/graph/39566-graph.png",
+        "inventory_location_lat": "49.54741",
+        "inventory_location_lon": "25.62685",
+        "history": [
+            {
+                "itemid": "39566",
+                "clock": "1670056591",
+                "value": "1",
+                "ns": "715548844"
+            },
+            {
+                "itemid": "39566",
+                "clock": "1670056651",
+                "value": "1",
+                "ns": "757432201"
+            },
+            {
+                "itemid": "39566",
+                "clock": "1670056711",
+                "value": "1",
+                "ns": "810275553"
+            }
+        ]
+    },
+    {
+        "hostid": "10468",
+        "host": "router-depo-khmelnyckogo-10a",
+        "graph_url": "/static/graph/39569-graph.png",
+        "inventory_location_lat": "49.53480",
+        "inventory_location_lon": "25.60217",
+        "history": [
+            {
+                "itemid": "39569",
+                "clock": "1670056592",
+                "value": "1",
+                "ns": "716407541"
+            },
+            {
+                "itemid": "39569",
+                "clock": "1670056652",
+                "value": "1",
+                "ns": "758440554"
+            },
+            {
+                "itemid": "39569",
+                "clock": "1670056712",
+                "value": "1",
+                "ns": "810757730"
+            }
+        ]
+    },
+    {
+        "hostid": "10469",
+        "host": "router-fainemisto-shevchenka-23",
+        "graph_url": "/static/graph/39572-graph.png",
+        "inventory_location_lat": "49.55277",
+        "inventory_location_lon": "25.59541",
+        "history": [
+            {
+                "itemid": "39572",
+                "clock": "1670056593",
+                "value": "1",
+                "ns": "716845899"
+            },
+            {
+                "itemid": "39572",
+                "clock": "1670056653",
+                "value": "1",
+                "ns": "761512364"
+            },
+            {
+                "itemid": "39572",
+                "clock": "1670056713",
+                "value": "1",
+                "ns": "812244511"
+            }
+        ]
+    },
+    {
+        "hostid": "10470",
+        "host": "router-flamingo-torgovycya-7",
+        "graph_url": "/static/graph/39575-graph.png",
+        "inventory_location_lat": "49.5437980",
+        "inventory_location_lon": "25.5977141",
+        "history": [
+            {
+                "itemid": "39575",
+                "clock": "1670056594",
+                "value": "1",
+                "ns": "718570544"
+            },
+            {
+                "itemid": "39575",
+                "clock": "1670056654",
+                "value": "1",
+                "ns": "764380809"
+            },
+            {
+                "itemid": "39575",
+                "clock": "1670056714",
+                "value": "1",
+                "ns": "812850704"
+            }
+        ]
+    },
+    {
+        "hostid": "10471",
+        "host": "router-friday-franka-23",
+        "graph_url": "/static/graph/39578-graph.png",
+        "inventory_location_lat": "49.55623",
+        "inventory_location_lon": "25.59698",
+        "history": [
+            {
+                "itemid": "39578",
+                "clock": "1670056595",
+                "value": "1",
+                "ns": "719021272"
+            },
+            {
+                "itemid": "39578",
+                "clock": "1670056655",
+                "value": "1",
+                "ns": "764525954"
+            },
+            {
+                "itemid": "39578",
+                "clock": "1670056715",
+                "value": "1",
+                "ns": "815335559"
+            }
+        ]
+    },
+    {
+        "hostid": "10472",
+        "host": "router-katedra-sagaydachnogo-14",
+        "graph_url": "/static/graph/39581-graph.png",
+        "inventory_location_lat": "49.55307",
+        "inventory_location_lon": "25.59168",
+        "history": [
+            {
+                "itemid": "39581",
+                "clock": "1670056596",
+                "value": "1",
+                "ns": "720335507"
+            },
+            {
+                "itemid": "39581",
+                "clock": "1670056656",
+                "value": "1",
+                "ns": "771156712"
+            },
+            {
+                "itemid": "39581",
+                "clock": "1670056716",
+                "value": "1",
+                "ns": "816094739"
+            }
+        ]
+    },
+    {
+        "hostid": "10473",
+        "host": "router-lapizza-chornovola-11",
+        "graph_url": "/static/graph/39584-graph.png",
+        "inventory_location_lat": "49.55375",
+        "inventory_location_lon": "25.59813",
+        "history": [
+            {
+                "itemid": "39584",
+                "clock": "1670056597",
+                "value": "1",
+                "ns": "722335514"
+            },
+            {
+                "itemid": "39584",
+                "clock": "1670056657",
+                "value": "1",
+                "ns": "768166129"
+            },
+            {
+                "itemid": "39584",
+                "clock": "1670056717",
+                "value": "1",
+                "ns": "816817670"
+            }
+        ]
+    },
+    {
+        "hostid": "10474",
+        "host": "router-matvey-lukyanovycha-8",
+        "graph_url": "/static/graph/39587-graph.png",
+        "inventory_location_lat": "49.57406",
+        "inventory_location_lon": "25.59597",
+        "history": [
+            {
+                "itemid": "39587",
+                "clock": "1670056598",
+                "value": "1",
+                "ns": "723137203"
+            },
+            {
+                "itemid": "39587",
+                "clock": "1670056658",
+                "value": "1",
+                "ns": "772359399"
+            },
+            {
+                "itemid": "39587",
+                "clock": "1670056718",
+                "value": "1",
+                "ns": "818076726"
+            }
+        ]
+    },
+    {
+        "hostid": "10475",
+        "host": "router-maxim-bilecka-1",
+        "graph_url": "/static/graph/39590-graph.png",
+        "inventory_location_lat": "49.55341",
+        "inventory_location_lon": "25.58744",
+        "history": [
+            {
+                "itemid": "39590",
+                "clock": "1670056599",
+                "value": "1",
+                "ns": "724784260"
+            },
+            {
+                "itemid": "39590",
+                "clock": "1670056659",
+                "value": "1",
+                "ns": "770961645"
+            },
+            {
+                "itemid": "39590",
+                "clock": "1670056719",
+                "value": "1",
+                "ns": "818962723"
+            }
+        ]
+    },
+    {
+        "hostid": "10476",
+        "host": "router-miskavtotrans-troleybusna-9",
+        "graph_url": "/static/graph/39593-graph.png",
+        "inventory_location_lat": "49.54462",
+        "inventory_location_lon": "25.55583",
+        "history": [
+            {
+                "itemid": "39593",
+                "clock": "1670056600",
+                "value": "1",
+                "ns": "725878301"
+            },
+            {
+                "itemid": "39593",
+                "clock": "1670056660",
+                "value": "1",
+                "ns": "773090379"
+            },
+            {
+                "itemid": "39593",
+                "clock": "1670056720",
+                "value": "1",
+                "ns": "819200956"
+            }
+        ]
+    },
+    {
+        "hostid": "10477",
+        "host": "router-marcypan-kryvonosa2b",
+        "graph_url": "/static/graph/39596-graph.png",
+        "inventory_location_lat": "49.54668",
+        "inventory_location_lon": "25.56497",
+        "history": [
+            {
+                "itemid": "39596",
+                "clock": "1670056601",
+                "value": "1",
+                "ns": "727545537"
+            },
+            {
+                "itemid": "39596",
+                "clock": "1670056661",
+                "value": "1",
+                "ns": "773570176"
+            },
+            {
+                "itemid": "39596",
+                "clock": "1670056721",
+                "value": "1",
+                "ns": "820915101"
+            }
+        ]
+    },
+    {
+        "hostid": "10478",
+        "host": "router-dovzhenka-6a",
+        "graph_url": "/static/graph/39617-graph.png",
+        "inventory_location_lat": "49.54091",
+        "inventory_location_lon": "25.62303",
+        "history": [
+            {
+                "itemid": "39617",
+                "clock": "1670056602",
+                "value": "1",
+                "ns": "730154218"
+            },
+            {
+                "itemid": "39617",
+                "clock": "1670056662",
+                "value": "1",
+                "ns": "774840232"
+            },
+            {
+                "itemid": "39617",
+                "clock": "1670056722",
+                "value": "1",
+                "ns": "821231382"
+            }
+        ]
+    },
+    {
+        "hostid": "10479",
+        "host": "camera-obolonya-11",
+        "graph_url": "/static/graph/39647-graph.png",
+        "inventory_location_lat": "49.54232",
+        "inventory_location_lon": "25.59748",
+        "history": [
+            {
+                "itemid": "39647",
+                "clock": "1670056603",
+                "value": "1",
+                "ns": "730971837"
+            },
+            {
+                "itemid": "39647",
+                "clock": "1670056663",
+                "value": "1",
+                "ns": "775229802"
+            },
+            {
+                "itemid": "39647",
+                "clock": "1670056723",
+                "value": "1",
+                "ns": "821791997"
+            }
+        ]
+    },
+    {
+        "hostid": "10480",
+        "host": "camera-obolonya-19",
+        "graph_url": "/static/graph/39650-graph.png",
+        "inventory_location_lat": "49.54170",
+        "inventory_location_lon": "25.59714",
+        "history": [
+            {
+                "itemid": "39650",
+                "clock": "1670056604",
+                "value": "1",
+                "ns": "732069168"
+            },
+            {
+                "itemid": "39650",
+                "clock": "1670056664",
+                "value": "1",
+                "ns": "776396191"
+            },
+            {
+                "itemid": "39650",
+                "clock": "1670056724",
+                "value": "1",
+                "ns": "822055550"
+            }
+        ]
+    },
+    {
+        "hostid": "10482",
+        "host": "camera-kurbasa-9",
+        "graph_url": "/static/graph/39656-graph.png",
+        "inventory_location_lat": "49.57341",
+        "inventory_location_lon": "25.64310",
+        "history": [
+            {
+                "itemid": "39656",
+                "clock": "1670056606",
+                "value": "0",
+                "ns": "732413027"
+            },
+            {
+                "itemid": "39656",
+                "clock": "1670056666",
+                "value": "0",
+                "ns": "777109281"
+            },
+            {
+                "itemid": "39656",
+                "clock": "1670056726",
+                "value": "0",
+                "ns": "823964529"
+            }
+        ]
+    },
+    {
+        "hostid": "10483",
+        "host": "camera-dovzhenka-13",
+        "graph_url": "/static/graph/39659-graph.png",
+        "inventory_location_lat": "49.53911",
+        "inventory_location_lon": "25.62655",
+        "history": [
+            {
+                "itemid": "39659",
+                "clock": "1670056607",
+                "value": "1",
+                "ns": "733864359"
+            },
+            {
+                "itemid": "39659",
+                "clock": "1670056667",
+                "value": "1",
+                "ns": "779056460"
+            },
+            {
+                "itemid": "39659",
+                "clock": "1670056727",
+                "value": "1",
+                "ns": "824653880"
+            }
+        ]
+    },
+    {
+        "hostid": "10484",
+        "host": "camera-dovzhenka-3",
+        "graph_url": "/static/graph/39662-graph.png",
+        "inventory_location_lat": "49.54267",
+        "inventory_location_lon": "25.62351",
+        "history": [
+            {
+                "itemid": "39662",
+                "clock": "1670056608",
+                "value": "1",
+                "ns": "734512332"
+            },
+            {
+                "itemid": "39662",
+                "clock": "1670056668",
+                "value": "1",
+                "ns": "779285613"
+            },
+            {
+                "itemid": "39662",
+                "clock": "1670056728",
+                "value": "1",
+                "ns": "825847869"
+            }
+        ]
+    },
+    {
+        "hostid": "10485",
+        "host": "camera-bandery-90",
+        "graph_url": "/static/graph/39665-graph.png",
+        "inventory_location_lat": "49.54844",
+        "inventory_location_lon": "25.62738",
+        "history": [
+            {
+                "itemid": "39665",
+                "clock": "1670056609",
+                "value": "1",
+                "ns": "734937740"
+            },
+            {
+                "itemid": "39665",
+                "clock": "1670056669",
+                "value": "1",
+                "ns": "779750551"
+            },
+            {
+                "itemid": "39665",
+                "clock": "1670056729",
+                "value": "1",
+                "ns": "826199049"
+            }
+        ]
+    },
+    {
+        "hostid": "10486",
+        "host": "camera-tarnavskogo-24",
+        "graph_url": "/static/graph/39668-graph.png",
+        "inventory_location_lat": "49.56439",
+        "inventory_location_lon": "25.63415",
+        "history": [
+            {
+                "itemid": "39668",
+                "clock": "1670056610",
+                "value": "0",
+                "ns": "735354839"
+            },
+            {
+                "itemid": "39668",
+                "clock": "1670056670",
+                "value": "0",
+                "ns": "780048902"
+            },
+            {
+                "itemid": "39668",
+                "clock": "1670056730",
+                "value": "0",
+                "ns": "826473871"
+            }
+        ]
+    },
+    {
+        "hostid": "10487",
+        "host": "camera-tarnavskogo-26",
+        "graph_url": "/static/graph/39671-graph.png",
+        "inventory_location_lat": "49.56460",
+        "inventory_location_lon": "25.63483",
+        "history": [
+            {
+                "itemid": "39671",
+                "clock": "1670056611",
+                "value": "1",
+                "ns": "736787941"
+            },
+            {
+                "itemid": "39671",
+                "clock": "1670056671",
+                "value": "1",
+                "ns": "781358628"
+            },
+            {
+                "itemid": "39671",
+                "clock": "1670056731",
+                "value": "1",
+                "ns": "826910949"
+            }
+        ]
+    },
+    {
+        "hostid": "10488",
+        "host": "camera-tarnavskogo-4",
+        "graph_url": "/static/graph/39674-graph.png",
+        "inventory_location_lat": "49.56182",
+        "inventory_location_lon": "25.62605",
+        "history": [
+            {
+                "itemid": "39674",
+                "clock": "1670056612",
+                "value": "1",
+                "ns": "737382195"
+            },
+            {
+                "itemid": "39674",
+                "clock": "1670056672",
+                "value": "1",
+                "ns": "782051849"
+            },
+            {
+                "itemid": "39674",
+                "clock": "1670056732",
+                "value": "1",
+                "ns": "828453469"
+            }
+        ]
+    },
+    {
+        "hostid": "10489",
+        "host": "camera-konovalcya-4",
+        "graph_url": "/static/graph/39677-graph.png",
+        "inventory_location_lat": "49.55373",
+        "inventory_location_lon": "25.62449",
+        "history": [
+            {
+                "itemid": "39677",
+                "clock": "1670056613",
+                "value": "1",
+                "ns": "738058907"
+            },
+            {
+                "itemid": "39677",
+                "clock": "1670056673",
+                "value": "1",
+                "ns": "781433745"
+            },
+            {
+                "itemid": "39677",
+                "clock": "1670056733",
+                "value": "1",
+                "ns": "828224964"
+            }
+        ]
+    },
+    {
+        "hostid": "10490",
+        "host": "camera-zolotogirska-5",
+        "graph_url": "/static/graph/39680-graph.png",
+        "inventory_location_lat": "49.56189",
+        "inventory_location_lon": "25.55243",
+        "history": [
+            {
+                "itemid": "39680",
+                "clock": "1670056614",
+                "value": "1",
+                "ns": "738527114"
+            },
+            {
+                "itemid": "39680",
+                "clock": "1670056674",
+                "value": "1",
+                "ns": "782792299"
+            },
+            {
+                "itemid": "39680",
+                "clock": "1670056734",
+                "value": "1",
+                "ns": "829027113"
+            }
+        ]
+    },
+    {
+        "hostid": "10491",
+        "host": "router-bianko-d-galyckogo-10",
+        "graph_url": "/static/graph/39683-graph.png",
+        "inventory_location_lat": "49.54704",
+        "inventory_location_lon": "25.62671",
+        "history": [
+            {
+                "itemid": "39683",
+                "clock": "1670056615",
+                "value": "1",
+                "ns": "739106778"
+            },
+            {
+                "itemid": "39683",
+                "clock": "1670056675",
+                "value": "1",
+                "ns": "783136529"
+            },
+            {
+                "itemid": "39683",
+                "clock": "1670056735",
+                "value": "1",
+                "ns": "829506660"
+            }
+        ]
+    },
+    {
+        "hostid": "10492",
+        "host": "camera-bilohirska18a",
+        "graph_url": "/static/graph/39686-graph.png",
+        "inventory_location_lat": "49.53892",
+        "inventory_location_lon": "25.59255",
+        "history": [
+            {
+                "itemid": "39686",
+                "clock": "1670056616",
+                "value": "1",
+                "ns": "739534947"
+            },
+            {
+                "itemid": "39686",
+                "clock": "1670056676",
+                "value": "1",
+                "ns": "783436311"
+            },
+            {
+                "itemid": "39686",
+                "clock": "1670056736",
+                "value": "1",
+                "ns": "830007206"
+            }
+        ]
+    },
+    {
+        "hostid": "10493",
+        "host": "router-berezhanska-53",
+        "graph_url": "/static/graph/39689-graph.png",
+        "inventory_location_lat": "49.54857",
+        "inventory_location_lon": "25.55383",
+        "history": [
+            {
+                "itemid": "39689",
+                "clock": "1670056617",
+                "value": "1",
+                "ns": "739877727"
+            },
+            {
+                "itemid": "39689",
+                "clock": "1670056677",
+                "value": "1",
+                "ns": "783699383"
+            },
+            {
+                "itemid": "39689",
+                "clock": "1670056737",
+                "value": "1",
+                "ns": "830259419"
+            }
+        ]
+    },
+    {
+        "hostid": "10494",
+        "host": "camera-troleybusna-2",
+        "graph_url": "/static/graph/39692-graph.png",
+        "inventory_location_lat": "49.54785",
+        "inventory_location_lon": "25.55127",
+        "history": [
+            {
+                "itemid": "39692",
+                "clock": "1670056618",
+                "value": "1",
+                "ns": "740145309"
+            },
+            {
+                "itemid": "39692",
+                "clock": "1670056678",
+                "value": "1",
+                "ns": "784912981"
+            },
+            {
+                "itemid": "39692",
+                "clock": "1670056738",
+                "value": "1",
+                "ns": "831653582"
+            }
+        ]
+    },
+    {
+        "hostid": "10495",
+        "host": "camera-bandery-86",
+        "graph_url": "/static/graph/39695-graph.png",
+        "inventory_location_lat": "49.54753",
+        "inventory_location_lon": "25.62502",
+        "history": [
+            {
+                "itemid": "39695",
+                "clock": "1670056619",
+                "value": "1",
+                "ns": "741146293"
+            },
+            {
+                "itemid": "39695",
+                "clock": "1670056679",
+                "value": "1",
+                "ns": "785591443"
+            },
+            {
+                "itemid": "39695",
+                "clock": "1670056739",
+                "value": "1",
+                "ns": "832491010"
+            }
+        ]
+    },
+    {
+        "hostid": "10496",
+        "host": "camera-bandery-78",
+        "graph_url": "/static/graph/39698-graph.png",
+        "inventory_location_lat": "49.54779",
+        "inventory_location_lon": "25.62383",
+        "history": [
+            {
+                "itemid": "39698",
+                "clock": "1670056620",
+                "value": "1",
+                "ns": "741539892"
+            },
+            {
+                "itemid": "39698",
+                "clock": "1670056680",
+                "value": "1",
+                "ns": "786685154"
+            },
+            {
+                "itemid": "39698",
+                "clock": "1670056740",
+                "value": "1",
+                "ns": "833091593"
+            }
+        ]
+    },
+    {
+        "hostid": "10497",
+        "host": "camera-kyivska-12",
+        "graph_url": "/static/graph/39701-graph.png",
+        "inventory_location_lat": "49.56238",
+        "inventory_location_lon": "25.63861",
+        "history": [
+            {
+                "itemid": "39701",
+                "clock": "1670056621",
+                "value": "0",
+                "ns": "742411259"
+            },
+            {
+                "itemid": "39701",
+                "clock": "1670056681",
+                "value": "0",
+                "ns": "787247319"
+            },
+            {
+                "itemid": "39701",
+                "clock": "1670056741",
+                "value": "0",
+                "ns": "833579920"
+            }
+        ]
+    },
+    {
+        "hostid": "10498",
+        "host": "camera-troleybusna-13",
+        "graph_url": "/static/graph/39704-graph.png",
+        "inventory_location_lat": "49.54340",
+        "inventory_location_lon": "25.55584",
+        "history": [
+            {
+                "itemid": "39704",
+                "clock": "1670056622",
+                "value": "1",
+                "ns": "742679121"
+            },
+            {
+                "itemid": "39704",
+                "clock": "1670056682",
+                "value": "1",
+                "ns": "788135965"
+            },
+            {
+                "itemid": "39704",
+                "clock": "1670056742",
+                "value": "1",
+                "ns": "834009098"
+            }
+        ]
+    },
+    {
+        "hostid": "10499",
+        "host": "camera-dovzhenka-12",
+        "graph_url": "/static/graph/39707-graph.png",
+        "inventory_location_lat": "49.53990",
+        "inventory_location_lon": "25.62376",
+        "history": [
+            {
+                "itemid": "39707",
+                "clock": "1670056623",
+                "value": "0",
+                "ns": "742953354"
+            },
+            {
+                "itemid": "39707",
+                "clock": "1670056683",
+                "value": "0",
+                "ns": "789770262"
+            },
+            {
+                "itemid": "39707",
+                "clock": "1670056743",
+                "value": "0",
+                "ns": "834321750"
+            }
+        ]
+    },
+    {
+        "hostid": "10500",
+        "host": "camera-griga-3",
+        "graph_url": "/static/graph/39710-graph.png",
+        "inventory_location_lat": "49.57841",
+        "inventory_location_lon": "25.58960",
+        "history": [
+            {
+                "itemid": "39710",
+                "clock": "1670056624",
+                "value": "0",
+                "ns": "743444140"
+            },
+            {
+                "itemid": "39710",
+                "clock": "1670056684",
+                "value": "0",
+                "ns": "790158832"
+            },
+            {
+                "itemid": "39710",
+                "clock": "1670056744",
+                "value": "0",
+                "ns": "834983572"
+            }
+        ]
+    },
+    {
+        "hostid": "10501",
+        "host": "router-yaremchuka-25",
+        "graph_url": "/static/graph/39713-graph.png",
+        "inventory_location_lat": "49.54863",
+        "inventory_location_lon": "25.57295",
+        "history": [
+            {
+                "itemid": "39713",
+                "clock": "1670056625",
+                "value": "1",
+                "ns": "743776221"
+            },
+            {
+                "itemid": "39713",
+                "clock": "1670056685",
+                "value": "1",
+                "ns": "790505832"
+            },
+            {
+                "itemid": "39713",
+                "clock": "1670056745",
+                "value": "1",
+                "ns": "836650078"
+            }
+        ]
+    },
+    {
+        "hostid": "10502",
+        "host": "camera-zluky-29",
+        "graph_url": "/static/graph/39734-graph.png",
+        "inventory_location_lat": "49.56157",
+        "inventory_location_lon": "25.62039",
+        "history": [
+            {
+                "itemid": "39734",
+                "clock": "1670056626",
+                "value": "1",
+                "ns": "744416364"
+            },
+            {
+                "itemid": "39734",
+                "clock": "1670056686",
+                "value": "1",
+                "ns": "791174314"
+            },
+            {
+                "itemid": "39734",
+                "clock": "1670056746",
+                "value": "1",
+                "ns": "836961759"
+            }
+        ]
+    },
+    {
+        "hostid": "10503",
+        "host": "camera-zluky-39",
+        "graph_url": "/static/graph/39737-graph.png",
+        "inventory_location_lat": "49.55919",
+        "inventory_location_lon": "25.62701",
+        "history": [
+            {
+                "itemid": "39737",
+                "clock": "1670056627",
+                "value": "1",
+                "ns": "745098625"
+            },
+            {
+                "itemid": "39737",
+                "clock": "1670056687",
+                "value": "1",
+                "ns": "791615342"
+            },
+            {
+                "itemid": "39737",
+                "clock": "1670056747",
+                "value": "1",
+                "ns": "837536754"
+            }
+        ]
+    },
+    {
+        "hostid": "10504",
+        "host": "router-baykivci-lisova",
+        "graph_url": "/static/graph/39794-graph.png",
+        "inventory_location_lat": "49.56690",
+        "inventory_location_lon": "25.66792",
+        "history": [
+            {
+                "itemid": "39794",
+                "clock": "1670056628",
+                "value": "0",
+                "ns": "745513874"
+            },
+            {
+                "itemid": "39794",
+                "clock": "1670056688",
+                "value": "0",
+                "ns": "792947637"
+            },
+            {
+                "itemid": "39794",
+                "clock": "1670056748",
+                "value": "0",
+                "ns": "837802346"
+            }
+        ]
+    },
+    {
+        "hostid": "10505",
+        "host": "camera-petlury-19",
+        "graph_url": "/static/graph/39797-graph.png",
+        "inventory_location_lat": "49.55803",
+        "inventory_location_lon": "25.64567",
+        "history": [
+            {
+                "itemid": "39797",
+                "clock": "1670056629",
+                "value": "0",
+                "ns": "745854575"
+            },
+            {
+                "itemid": "39797",
+                "clock": "1670056689",
+                "value": "0",
+                "ns": "793052263"
+            },
+            {
+                "itemid": "39797",
+                "clock": "1670056749",
+                "value": "0",
+                "ns": "838151917"
+            }
+        ]
+    },
+    {
+        "hostid": "10506",
+        "host": "camera-budnogo-50",
+        "graph_url": "/static/graph/39800-graph.png",
+        "inventory_location_lat": "49.54597",
+        "inventory_location_lon": "25.54939",
+        "history": [
+            {
+                "itemid": "39800",
+                "clock": "1670056630",
+                "value": "1",
+                "ns": "746220355"
+            },
+            {
+                "itemid": "39800",
+                "clock": "1670056690",
+                "value": "1",
+                "ns": "793478722"
+            },
+            {
+                "itemid": "39800",
+                "clock": "1670056750",
+                "value": "1",
+                "ns": "838550616"
+            }
+        ]
+    },
+    {
+        "hostid": "10507",
+        "host": "camera-budnogo-22",
+        "graph_url": "/static/graph/39803-graph.png",
+        "inventory_location_lat": "49.54055",
+        "inventory_location_lon": "25.57786",
+        "history": [
+            {
+                "itemid": "39803",
+                "clock": "1670056631",
+                "value": "1",
+                "ns": "746845118"
+            },
+            {
+                "itemid": "39803",
+                "clock": "1670056691",
+                "value": "1",
+                "ns": "793901220"
+            },
+            {
+                "itemid": "39803",
+                "clock": "1670056751",
+                "value": "1",
+                "ns": "838916226"
+            }
+        ]
+    },
+    {
+        "hostid": "10508",
+        "host": "router-dnz-21-vyshnyveckogo-6",
+        "graph_url": "/static/graph/39806-graph.png",
+        "inventory_location_lat": "49.57008",
+        "inventory_location_lon": "25.64466",
+        "history": [
+            {
+                "itemid": "39806",
+                "clock": "1670056632",
+                "value": "0",
+                "ns": "747110960"
+            },
+            {
+                "itemid": "39806",
+                "clock": "1670056692",
+                "value": "0",
+                "ns": "795698933"
+            },
+            {
+                "itemid": "39806",
+                "clock": "1670056752",
+                "value": "0",
+                "ns": "839273096"
+            }
+        ]
+    },
+    {
+        "hostid": "10509",
+        "host": "router-krushelnyckoi-18",
+        "graph_url": "/static/graph/39818-graph.png",
+        "inventory_location_lat": "49.55737",
+        "inventory_location_lon": "25.59564",
+        "history": [
+            {
+                "itemid": "39818",
+                "clock": "1670056633",
+                "value": "1",
+                "ns": "748350247"
+            },
+            {
+                "itemid": "39818",
+                "clock": "1670056693",
+                "value": "1",
+                "ns": "795972955"
+            },
+            {
+                "itemid": "39818",
+                "clock": "1670056753",
+                "value": "1",
+                "ns": "841158176"
+            }
+        ]
+    },
+    {
+        "hostid": "10510",
+        "host": "router-g-euromaydanu-",
+        "graph_url": "/static/graph/39830-graph.png",
+        "inventory_location_lat": "49.54868",
+        "inventory_location_lon": "25.59166",
+        "history": [
+            {
+                "itemid": "39830",
+                "clock": "1670056634",
+                "value": "0",
+                "ns": "748872813"
+            },
+            {
+                "itemid": "39830",
+                "clock": "1670056694",
+                "value": "0",
+                "ns": "796727285"
+            },
+            {
+                "itemid": "39830",
+                "clock": "1670056754",
+                "value": "0",
+                "ns": "841662213"
+            }
+        ]
+    },
+    {
+        "hostid": "10511",
+        "host": "router-gai-velyki-yaremchuka",
+        "graph_url": "/static/graph/39833-graph.png",
+        "inventory_location_lat": "49.51390",
+        "inventory_location_lon": "25.68087",
+        "history": [
+            {
+                "itemid": "39833",
+                "clock": "1670056635",
+                "value": "1",
+                "ns": "749229183"
+            },
+            {
+                "itemid": "39833",
+                "clock": "1670056695",
+                "value": "1",
+                "ns": "796986438"
+            },
+            {
+                "itemid": "39833",
+                "clock": "1670056755",
+                "value": "1",
+                "ns": "842342514"
+            }
+        ]
+    },
+    {
+        "hostid": "10512",
+        "host": "router-chestyliv-gayova",
+        "graph_url": "/static/graph/39836-graph.png",
+        "inventory_location_lat": "49.60362",
+        "inventory_location_lon": "25.57043",
+        "history": [
+            {
+                "itemid": "39836",
+                "clock": "1670056576",
+                "value": "0",
+                "ns": "702601929"
+            },
+            {
+                "itemid": "39836",
+                "clock": "1670056636",
+                "value": "0",
+                "ns": "749493916"
+            },
+            {
+                "itemid": "39836",
+                "clock": "1670056696",
+                "value": "0",
+                "ns": "797666399"
+            }
+        ]
+    },
+    {
+        "hostid": "10513",
+        "host": "router-gai-grechynski-dzherelna",
+        "graph_url": "/static/graph/39839-graph.png",
+        "inventory_location_lat": "49.57183",
+        "inventory_location_lon": "25.65003",
+        "history": [
+            {
+                "itemid": "39839",
+                "clock": "1670056577",
+                "value": "0",
+                "ns": "702955599"
+            },
+            {
+                "itemid": "39839",
+                "clock": "1670056637",
+                "value": "0",
+                "ns": "749739689"
+            },
+            {
+                "itemid": "39839",
+                "clock": "1670056697",
+                "value": "0",
+                "ns": "797903323"
+            }
+        ]
+    },
+    {
+        "hostid": "10514",
+        "host": "camera-terko-mykulynecka-116a",
+        "graph_url": "/static/graph/39923-graph.png",
+        "inventory_location_lat": "49.50732",
+        "inventory_location_lon": "25.60849",
+        "history": [
+            {
+                "itemid": "39923",
+                "clock": "1670056578",
+                "value": "1",
+                "ns": "704081040"
+            },
+            {
+                "itemid": "39923",
+                "clock": "1670056638",
+                "value": "1",
+                "ns": "750539248"
+            },
+            {
+                "itemid": "39923",
+                "clock": "1670056698",
+                "value": "1",
+                "ns": "798254923"
+            }
+        ]
+    },
+    {
+        "hostid": "10515",
+        "host": "router-krushelnyckoi-55",
+        "graph_url": "/static/graph/39926-graph.png",
+        "inventory_location_lat": "49.55872",
+        "inventory_location_lon": "25.59681",
+        "history": [
+            {
+                "itemid": "39926",
+                "clock": "1670056579",
+                "value": "1",
+                "ns": "704503238"
+            },
+            {
+                "itemid": "39926",
+                "clock": "1670056639",
+                "value": "1",
+                "ns": "750918177"
+            },
+            {
+                "itemid": "39926",
+                "clock": "1670056699",
+                "value": "1",
+                "ns": "798549595"
+            }
+        ]
+    },
+    {
+        "hostid": "10516",
+        "host": "router-grushevskogo-5",
+        "graph_url": "/static/graph/39929-graph.png",
+        "inventory_location_lat": "49.55431",
+        "inventory_location_lon": "25.59237",
+        "history": [
+            {
+                "itemid": "39929",
+                "clock": "1670056580",
+                "value": "1",
+                "ns": "705469892"
+            },
+            {
+                "itemid": "39929",
+                "clock": "1670056640",
+                "value": "1",
+                "ns": "751289657"
+            },
+            {
+                "itemid": "39929",
+                "clock": "1670056700",
+                "value": "1",
+                "ns": "798954184"
+            }
+        ]
+    },
+    {
+        "hostid": "10517",
+        "host": "router-coolbaby",
+        "graph_url": "/static/graph/39977-graph.png",
+        "inventory_location_lat": "49.55299",
+        "inventory_location_lon": "25.59723",
+        "history": [
+            {
+                "itemid": "39977",
+                "clock": "1670056581",
+                "value": "1",
+                "ns": "706025967"
+            },
+            {
+                "itemid": "39977",
+                "clock": "1670056641",
+                "value": "1",
+                "ns": "752104555"
+            },
+            {
+                "itemid": "39977",
+                "clock": "1670056701",
+                "value": "1",
+                "ns": "801130637"
+            }
+        ]
+    },
+    {
+        "hostid": "10518",
+        "host": "router-lysyy",
+        "graph_url": "/static/graph/39980-graph.png",
+        "inventory_location_lat": "49.55076",
+        "inventory_location_lon": "25.59781",
+        "history": [
+            {
+                "itemid": "39980",
+                "clock": "1670056582",
+                "value": "1",
+                "ns": "706418906"
+            },
+            {
+                "itemid": "39980",
+                "clock": "1670056642",
+                "value": "1",
+                "ns": "752353808"
+            },
+            {
+                "itemid": "39980",
+                "clock": "1670056702",
+                "value": "1",
+                "ns": "801511596"
+            }
+        ]
+    },
+    {
+        "hostid": "10519",
+        "host": "router-leliva-kachaly",
+        "graph_url": "/static/graph/39983-graph.png",
+        "inventory_location_lat": "49.55647",
+        "inventory_location_lon": "25.59779",
+        "history": [
+            {
+                "itemid": "39983",
+                "clock": "1670056583",
+                "value": "1",
+                "ns": "709212653"
+            },
+            {
+                "itemid": "39983",
+                "clock": "1670056643",
+                "value": "1",
+                "ns": "752777256"
+            },
+            {
+                "itemid": "39983",
+                "clock": "1670056703",
+                "value": "1",
+                "ns": "802231367"
+            }
+        ]
+    }
+]
