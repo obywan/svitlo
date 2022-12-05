@@ -42,41 +42,30 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder<List<PointItem>>(
-      future: Provider.of<PointsProvider>(context, listen: false).getchAndSet(),
-      builder: ((_, snapshot) {
-        final List<PointItem> data = snapshot.data == null ? [] : snapshot.data!;
+    return Consumer<PointsProvider>(
+      builder: ((context, value, child) {
         return Scaffold(
-          appBar: AppBar(
-            actions: [
-              IconButton(
-                icon: const Icon(Icons.map),
-                onPressed: () => Navigator.of(context).pushNamed(MapScreen.routeName),
-              )
-            ],
-            title: const Text('Svitlo'),
-          ),
-          body: FutureBuilder<List<int>>(
-            future: AppSettings.getFavs(),
-            builder: (__, favsSnapshot) {
-              if (favsSnapshot.connectionState == ConnectionState.done) {
-                return Center(
-                  child: getList(data, favsSnapshot.data!),
-                );
-              } else {
-                return const Center(
-                  child: CircularProgressIndicator(),
-                );
-              }
-            },
-          ),
-        );
+            appBar: AppBar(
+              actions: [
+                IconButton(
+                  icon: const Icon(Icons.map),
+                  onPressed: () => Navigator.of(context).pushNamed(MapScreen.routeName),
+                )
+              ],
+              title: const Text('Svitlo'),
+            ),
+            body: Center(
+              child: getList(value),
+            )
+
+            // },
+            );
       }),
     );
   }
 
-  Widget getList(List<PointItem> data, List<int> favsData) {
-    if (data.isEmpty) {
+  Widget getList(PointsProvider pp) {
+    if (pp.points.isEmpty) {
       return const Center(
         child: CircularProgressIndicator(),
       );
@@ -85,26 +74,31 @@ class MyHomePage extends StatelessWidget {
       itemBuilder: (context, index) {
         return ListTile(
           onTap: () {
-            showModalBottomSheet(context: context, builder: (__) => Image.network('${ApiRequestsHelper.baseUrl}${data[index].graphUrl}'));
+            showModalBottomSheet(context: context, builder: (__) => Image.network('${ApiRequestsHelper.baseUrl}${pp.points[index].graphUrl}'));
           },
-          title: Text(data[index].hostName),
+          title: Text(pp.points[index].hostName),
           leading: Icon(
             Icons.circle,
-            color: data[index].active ? Colors.green : Colors.red,
+            color: pp.points[index].active ? Colors.green : Colors.red,
           ),
           trailing: IconButton(
-            icon: Icon(favsData.contains(data[index].hostId) ? Icons.star_border : Icons.star),
-            onPressed: () {
-              if (favsData.contains(data[index].hostId)) {
-                AppSettings.removeFromFavs(data[index].hostId);
-              } else {
-                AppSettings.addToFavs(data[index].hostId);
-              }
+            icon: getStarIcon(pp, index),
+            onPressed: () async {
+              await pp.favTap(pp.points[index].hostId);
             },
           ),
         );
       },
-      itemCount: data.length,
+      itemCount: pp.points.length,
     );
+  }
+
+  Icon getStarIcon(PointsProvider pp, int index) {
+    return pp.isFav(pp.points[index].hostId)
+        ? const Icon(
+            Icons.star,
+            color: Colors.amber,
+          )
+        : const Icon(Icons.star_border);
   }
 }

@@ -9,6 +9,7 @@ import 'package:provider/provider.dart';
 import 'package:svitlo/models/point_item.dart';
 import 'package:svitlo/providers/points_provider.dart';
 
+import '../helpers/api_request_helper.dart';
 import '../helpers/tile_servers.dart';
 
 class MapScreen extends StatefulWidget {
@@ -82,12 +83,7 @@ class _MapScreenState extends State<MapScreen> {
           ),
         ),
         onTap: () {
-          showDialog(
-            context: context,
-            builder: (context) => AlertDialog(
-              content: Text(pointItem.hostName),
-            ),
-          );
+          showModalBottomSheet(context: context, builder: (__) => Image.network('${ApiRequestsHelper.baseUrl}${pointItem.graphUrl}'));
         },
       ),
     );
