@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:svitlo/helpers/api_request_helper.dart';
-import 'package:svitlo/helpers/app_settings.dart';
-import 'package:svitlo/models/point_item.dart';
-import 'package:svitlo/providers/points_provider.dart';
-import 'package:svitlo/screens/map_screen.dart';
+import 'package:svitlo/widgets/active_dot.dart';
+
+import 'helpers/api_request_helper.dart';
+import 'providers/points_provider.dart';
+import 'screens/map_screen.dart';
 
 void main() {
   runApp(
@@ -77,10 +77,7 @@ class MyHomePage extends StatelessWidget {
             showModalBottomSheet(context: context, builder: (__) => Image.network('${ApiRequestsHelper.baseUrl}${pp.points[index].graphUrl}'));
           },
           title: Text(pp.points[index].hostName),
-          leading: Icon(
-            Icons.circle,
-            color: pp.points[index].active ? Colors.green : Colors.red,
-          ),
+          leading: ActiveDot(size: 16, active: pp.points[index].active),
           trailing: IconButton(
             icon: getStarIcon(pp, index),
             onPressed: () async {

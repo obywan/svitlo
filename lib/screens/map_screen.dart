@@ -11,6 +11,7 @@ import 'package:svitlo/providers/points_provider.dart';
 
 import '../helpers/api_request_helper.dart';
 import '../helpers/tile_servers.dart';
+import '../widgets/active_dot.dart';
 
 class MapScreen extends StatefulWidget {
   static const String routeName = '/map';
@@ -73,15 +74,7 @@ class _MapScreenState extends State<MapScreen> {
       width: size,
       height: size,
       child: GestureDetector(
-        child: Container(
-          width: size,
-          height: size,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(50),
-            color: pointItem.active ? Colors.amber : Colors.black,
-            border: Border.all(),
-          ),
-        ),
+        child: ActiveDot(active: pointItem.active, size: size),
         onTap: () {
           showModalBottomSheet(context: context, builder: (__) => Image.network('${ApiRequestsHelper.baseUrl}${pointItem.graphUrl}'));
         },
