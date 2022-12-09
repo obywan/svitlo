@@ -1,15 +1,18 @@
 import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
-import 'package:svitlo/helpers/api_request_helper.dart';
-import 'package:svitlo/helpers/app_settings.dart';
-import 'package:svitlo/models/point_item.dart';
 import 'package:flutter/services.dart' show rootBundle;
+
+import '../helpers/api_request_helper.dart';
+import '../helpers/app_settings.dart';
+import '../models/point_item.dart';
 
 class PointsProvider with ChangeNotifier {
   List<PointItem> _points = [];
   List<PointItem> get points => [..._points];
   List<int> favs = [];
+
+  // Map<String, String> filesToSave = {};
 
   bool requestInProgress = false;
 
@@ -30,6 +33,7 @@ class PointsProvider with ChangeNotifier {
     if (result.success) {
       final data = result.body;
       _points = List<PointItem>.from((jsonDecode(data) as Iterable).map((e) => PointItem.fromJson(e)));
+
       rearrange();
     } else {
       // debugPrint('Failed: ${result.body}');

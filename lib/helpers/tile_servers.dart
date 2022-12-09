@@ -1,4 +1,4 @@
-const yourMapBoxAccessToken = 'pk.eyJ1Ijoib2J5d2FuIiwiYSI6ImNqdDQxNTAwejF1OXE0YXF0NWdrNTdoaWkifQ.YPwzlqVv18aDxd9CZKjSog';
+const yourMapBoxAccessToken = '';
 
 /// Legal notice: This url is only used for demo and educational purposes. You need a license key for production use.
 String google(int z, int x, int y) {
@@ -19,6 +19,13 @@ String googleDark(int z, int x, int y) {
 String mapbox(int z, int x, int y) {
   //Mapbox Streets
   final url = 'https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/$z/$x/$y?access_token=$yourMapBoxAccessToken';
+
+  return url;
+}
+
+String selfHosted(int z, int x, int y) {
+  //Mapbox Streets
+  final url = 'http://threekit.3dconfiguration.com/maptest/images/$z-$x-$y.png';
 
   return url;
 }

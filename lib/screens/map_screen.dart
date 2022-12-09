@@ -6,13 +6,12 @@ import 'package:flutter/material.dart';
 import 'package:latlng/latlng.dart';
 import 'package:map/map.dart';
 import 'package:provider/provider.dart';
-import 'package:svitlo/models/point_item.dart';
-import 'package:svitlo/providers/points_provider.dart';
-import 'package:svitlo/widgets/graph_popup.dart';
 
-import '../helpers/api_request_helper.dart';
 import '../helpers/tile_servers.dart';
+import '../models/point_item.dart';
+import '../providers/points_provider.dart';
 import '../widgets/active_dot.dart';
+import '../widgets/graph_popup.dart';
 
 class MapScreen extends StatefulWidget {
   static const String routeName = '/map';
@@ -85,7 +84,8 @@ class _MapScreenState extends State<MapScreen> {
 
   @override
   Widget build(BuildContext context) {
-    List<PointItem> points = Provider.of<PointsProvider>(context, listen: false).points;
+    PointsProvider pp = Provider.of<PointsProvider>(context, listen: false);
+    List<PointItem> points = pp.points;
     return Scaffold(
       appBar: AppBar(
         title: const Text('Markers'),
@@ -145,9 +145,17 @@ class _MapScreenState extends State<MapScreen> {
 
                       x %= tilesInZoom;
                       y %= tilesInZoom;
+                      // debugPrint('$z-$x-$y');
+                      // ImageSaver.saveImage(mapbox(z, x, y), '$z-$x-$y.png');
+                      // pp.filesToSave.putIfAbsent('$z-$x-$y.png', () => mapbox(z, x, y));
 
                       return CachedNetworkImage(
-                        imageUrl: mapbox(z, x, y),
+                        // imageUrl: 'https://www.gravatar.com/avatar/fd49cbc5ef56e7f12fd74049d228dc9c?s=256&d=identicon&r=PG&f=1',
+                        imageUrl: selfHosted(z, x, y),
+                        errorWidget: (_, s, d) => Text(
+                          '¯\\_(ツ)_/¯',
+                          textAlign: TextAlign.center,
+                        ),
                         fit: BoxFit.cover,
                       );
                     },
@@ -163,6 +171,14 @@ class _MapScreenState extends State<MapScreen> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _gotoDefault,
+        // onPressed: () async {
+        //   debugPrint('Saving started');
+        //   PointsProvider pp = Provider.of<PointsProvider>(context, listen: false);
+        //   for (var item in pp.filesToSave.entries) {
+        //     await ImageSaver.saveImage(item.value, item.key);
+        //   }
+        //   debugPrint('Saving done');
+        // },
         tooltip: 'My Location',
         child: const Icon(Icons.my_location),
       ),

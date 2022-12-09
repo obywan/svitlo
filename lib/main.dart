@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'helpers/image_saver.dart';
 import 'providers/points_provider.dart';
 import 'screens/map_screen.dart';
 import 'widgets/active_dot.dart';
@@ -45,6 +46,7 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<PointsProvider>(
       builder: ((context, value, child) {
+        ImageSaver.logPath();
         return Scaffold(
             appBar: AppBar(
               actions: [
