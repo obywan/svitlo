@@ -8,6 +8,7 @@ import 'package:map/map.dart';
 import 'package:provider/provider.dart';
 import 'package:svitlo/models/point_item.dart';
 import 'package:svitlo/providers/points_provider.dart';
+import 'package:svitlo/widgets/graph_popup.dart';
 
 import '../helpers/api_request_helper.dart';
 import '../helpers/tile_servers.dart';
@@ -28,7 +29,7 @@ class _MapScreenState extends State<MapScreen> {
   );
 
   void _gotoDefault() {
-    controller.center = const LatLng(35.68, 51.41);
+    controller.center = defaultPos;
     setState(() {});
   }
 
@@ -76,7 +77,7 @@ class _MapScreenState extends State<MapScreen> {
       child: GestureDetector(
         child: ActiveDot(active: pointItem.active, size: size),
         onTap: () {
-          showModalBottomSheet(context: context, builder: (__) => Image.network('${ApiRequestsHelper.baseUrl}${pointItem.graphUrl}'));
+          showModalBottomSheet(context: context, builder: (__) => GraphPopup(point: pointItem));
         },
       ),
     );

@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:svitlo/widgets/active_dot.dart';
 
-import 'helpers/api_request_helper.dart';
 import 'providers/points_provider.dart';
 import 'screens/map_screen.dart';
+import 'widgets/active_dot.dart';
+import 'widgets/fav_button.dart';
+import 'widgets/graph_popup.dart';
 
 void main() {
   runApp(
@@ -52,7 +53,7 @@ class MyHomePage extends StatelessWidget {
                   onPressed: () => Navigator.of(context).pushNamed(MapScreen.routeName),
                 )
               ],
-              title: const Text('Svitlo'),
+              title: const Text('Де світло'),
             ),
             body: Center(
               child: getList(value),
@@ -70,32 +71,27 @@ class MyHomePage extends StatelessWidget {
         child: CircularProgressIndicator(),
       );
     }
-    return ListView.builder(
-      itemBuilder: (context, index) {
-        return ListTile(
-          onTap: () {
-            showModalBottomSheet(context: context, builder: (__) => Image.network('${ApiRequestsHelper.baseUrl}${pp.points[index].graphUrl}'));
-          },
-          title: Text(pp.points[index].hostName),
-          leading: ActiveDot(size: 16, active: pp.points[index].active),
-          trailing: IconButton(
-            icon: getStarIcon(pp, index),
-            onPressed: () async {
-              await pp.favTap(pp.points[index].hostId);
+    return RefreshIndicator(
+      onRefresh: (() => pp.getchAndSet()),
+      child: ListView.builder(
+        itemBuilder: (context, index) {
+          return ListTile(
+            onTap: () {
+              showModalBottomSheet(
+                context: context,
+                builder: (__) => GraphPopup(point: pp.points[index]),
+              );
             },
-          ),
-        );
-      },
-      itemCount: pp.points.length,
+            title: Text(pp.points[index].hostName),
+            leading: ActiveDot(size: 16, active: pp.points[index].active),
+            trailing: FavButton(
+              favourite: pp.isFav(pp.points[index].hostId),
+              onTap: () => pp.favTap(pp.points[index].hostId),
+            ),
+          );
+        },
+        itemCount: pp.points.length,
+      ),
     );
-  }
-
-  Icon getStarIcon(PointsProvider pp, int index) {
-    return pp.isFav(pp.points[index].hostId)
-        ? const Icon(
-            Icons.star,
-            color: Colors.amber,
-          )
-        : const Icon(Icons.star_border);
   }
 }

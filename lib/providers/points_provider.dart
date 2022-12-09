@@ -23,7 +23,7 @@ class PointsProvider with ChangeNotifier {
 
   Future<void> getchAndSet() async {
     debugPrint('Points request!!!');
-    final result = await ApiRequestsHelper.requestGET(apiMethod: '/points');
+    final result = await ApiRequestsHelper.requestGET(apiMethod: '/static/js/points.json');
     // final testText = await _loadAsset('assets/files/test_points.txt');
     // final result = ServerResponse(true, testText);
     favs = await AppSettings.getFavs();
