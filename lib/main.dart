@@ -51,7 +51,24 @@ class MyHomePage extends StatelessWidget {
                 IconButton(
                   icon: const Icon(Icons.map),
                   onPressed: () => Navigator.of(context).pushNamed(MapScreen.routeName),
-                )
+                ),
+                IconButton(
+                  icon: const Icon(Icons.info),
+                  onPressed: () => showModalBottomSheet(
+                      context: context,
+                      builder: (_) => Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.symmetric(vertical: 16),
+                                child: Text('На основі даних сайту svitlo.ternopil.webcam'),
+                              ),
+                              SizedBox(
+                                height: 16,
+                              )
+                            ],
+                          )),
+                ),
               ],
               title: const Text('Де світло'),
             ),
