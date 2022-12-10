@@ -34,7 +34,7 @@ class _MapScreenState extends State<MapScreen> {
 
   void _onDoubleTap(MapTransformer transformer, Offset position) {
     const delta = 0.5;
-    final zoom = (controller.zoom + delta).clamp(2, 18).toDouble();
+    final zoom = (controller.zoom + delta).clamp(2, 17).toDouble();
 
     transformer.setZoomInPlace(zoom, position);
     setState(() {});

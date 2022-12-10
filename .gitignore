@@ -45,3 +45,5 @@ app.*.map.json
 /android/app/profile
 /android/app/release
 upload-keystore.jks
+assets/icon/1024x500.png
+assets/icon/icon.png
