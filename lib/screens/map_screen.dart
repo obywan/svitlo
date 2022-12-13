@@ -88,7 +88,7 @@ class _MapScreenState extends State<MapScreen> {
     List<PointItem> points = pp.points;
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Markers'),
+        title: const Text('Карта'),
       ),
       body: MapLayout(
         controller: controller,

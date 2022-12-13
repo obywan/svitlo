@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 
 import 'helpers/image_saver.dart';
 import 'providers/points_provider.dart';
+import 'screens/graph_screen.dart';
 import 'screens/map_screen.dart';
 import 'widgets/active_dot.dart';
 import 'widgets/fav_button.dart';
@@ -32,7 +33,10 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
-      routes: {MapScreen.routeName: (_) => const MapScreen()},
+      routes: {
+        MapScreen.routeName: (_) => const MapScreen(),
+        GraphScreen.routeName: (_) => const GraphScreen(),
+      },
     );
   }
 }
@@ -53,6 +57,10 @@ class MyHomePage extends StatelessWidget {
                 IconButton(
                   icon: const Icon(Icons.map),
                   onPressed: () => Navigator.of(context).pushNamed(MapScreen.routeName),
+                ),
+                IconButton(
+                  icon: const Icon(Icons.auto_graph_sharp),
+                  onPressed: () => Navigator.of(context).pushNamed(GraphScreen.routeName),
                 ),
                 IconButton(
                   icon: const Icon(Icons.info),
