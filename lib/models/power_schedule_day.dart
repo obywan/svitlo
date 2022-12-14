@@ -15,6 +15,20 @@ class PowerScheduleDay {
     }
     return PowerScheduleDay(items: itemsSetup, day: d);
   }
+
+  static PowerScheduleDay fromInitState(int init, int d) {
+    List<ScheduleItem> itemsSetup = [];
+    int state = init;
+    for (int i = 0; i < 24; i += 3) {
+      itemsSetup.add(ScheduleItem(TimeOfDay(hour: i, minute: 0), state));
+      state = increaseStateCounter(state);
+    }
+    return PowerScheduleDay(items: itemsSetup, day: d);
+  }
+
+  static int increaseStateCounter(int old) {
+    return (old - 1 < -1) ? 1 : old - 1;
+  }
 }
 
 class ScheduleItem {

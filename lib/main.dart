@@ -12,7 +12,10 @@ void main() {
     MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => PointsProvider()),
-        ChangeNotifierProvider(create: (_) => ScheduleProvider()),
+        ChangeNotifierProvider(
+          create: (_) => ScheduleProvider(),
+          lazy: false,
+        ),
       ],
       child: const MyApp(),
     ),
