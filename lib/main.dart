@@ -1,21 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:svitlo/providers/schedule_provider.dart';
 
-import 'helpers/image_saver.dart';
 import 'providers/points_provider.dart';
 import 'screens/graph_screen.dart';
+import 'screens/home_screen.dart';
 import 'screens/map_screen.dart';
-import 'widgets/active_dot.dart';
-import 'widgets/fav_button.dart';
-import 'widgets/graph_popup.dart';
 
 void main() {
   runApp(
     MultiProvider(
       providers: [
-        ChangeNotifierProvider(
-          create: (_) => PointsProvider(),
-        )
+        ChangeNotifierProvider(create: (_) => PointsProvider()),
+        ChangeNotifierProvider(create: (_) => ScheduleProvider()),
       ],
       child: const MyApp(),
     ),
@@ -30,95 +27,14 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'SvitloApp',
       theme: ThemeData(
+        brightness: Brightness.dark,
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const HomeScreen(title: 'Flutter Demo Home Page'),
       routes: {
         MapScreen.routeName: (_) => const MapScreen(),
         GraphScreen.routeName: (_) => const GraphScreen(),
       },
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  Widget build(BuildContext context) {
-    return Consumer<PointsProvider>(
-      builder: ((context, value, child) {
-        ImageSaver.logPath();
-        return Scaffold(
-            appBar: AppBar(
-              actions: [
-                IconButton(
-                  icon: const Icon(Icons.map),
-                  onPressed: () => Navigator.of(context).pushNamed(MapScreen.routeName),
-                ),
-                IconButton(
-                  icon: const Icon(Icons.auto_graph_sharp),
-                  onPressed: () => Navigator.of(context).pushNamed(GraphScreen.routeName),
-                ),
-                IconButton(
-                  icon: const Icon(Icons.info),
-                  onPressed: () => showModalBottomSheet(
-                      context: context,
-                      builder: (_) => Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.symmetric(vertical: 16),
-                                child: Text('На основі даних сайту svitlo.ternopil.webcam'),
-                              ),
-                              SizedBox(
-                                height: 16,
-                              )
-                            ],
-                          )),
-                ),
-              ],
-              title: const Text('Де світло'),
-            ),
-            body: Center(
-              child: getList(value),
-            )
-
-            // },
-            );
-      }),
-    );
-  }
-
-  Widget getList(PointsProvider pp) {
-    if (pp.points.isEmpty) {
-      return const Center(
-        child: CircularProgressIndicator(),
-      );
-    }
-    return RefreshIndicator(
-      onRefresh: (() => pp.getchAndSet()),
-      child: ListView.builder(
-        itemBuilder: (context, index) {
-          return ListTile(
-            onTap: () {
-              showModalBottomSheet(
-                context: context,
-                builder: (__) => GraphPopup(point: pp.points[index]),
-              );
-            },
-            title: Text(pp.points[index].hostName),
-            leading: ActiveDot(size: 16, active: pp.points[index].active),
-            trailing: FavButton(
-              favourite: pp.isFav(pp.points[index].hostId),
-              onTap: () => pp.favTap(pp.points[index].hostId),
-            ),
-          );
-        },
-        itemCount: pp.points.length,
-      ),
     );
   }
 }

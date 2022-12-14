@@ -11,6 +11,7 @@ class PointsProvider with ChangeNotifier {
   List<PointItem> _points = [];
   List<PointItem> get points => [..._points];
   List<int> favs = [];
+  bool dataLoaded = false;
 
   // Map<String, String> filesToSave = {};
 
@@ -26,19 +27,21 @@ class PointsProvider with ChangeNotifier {
 
   Future<void> getchAndSet() async {
     debugPrint('Points request!!!');
-    final result = await ApiRequestsHelper.requestGET(apiMethod: '/static/js/points.json');
-    // final testText = await _loadAsset('assets/files/test_points.txt');
-    // final result = ServerResponse(true, testText);
+    // final result = await ApiRequestsHelper.requestGET(apiMethod: '/static/js/points.json');
+    final testText = await _loadAsset('assets/files/test_points.txt');
+    final result = ServerResponse(true, testText);
     favs = await AppSettings.getFavs();
     if (result.success) {
       final data = result.body;
       _points = List<PointItem>.from((jsonDecode(data) as Iterable).map((e) => PointItem.fromJson(e)));
-
       rearrange();
+      notifyListeners();
+      dataLoaded = _points.fold<bool>(false, (previousValue, element) => previousValue || element.dataloaded);
     } else {
-      // debugPrint('Failed: ${result.body}');
+      notifyListeners();
+      dataLoaded = false;
     }
-    notifyListeners();
+    // notifyListeners();
   }
 
   Future<String> _loadAsset(String asset) async {
