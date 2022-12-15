@@ -23,7 +23,7 @@ class ScheduleProvider with ChangeNotifier {
     schedule.clear();
     int initState = await AppSettings.getInitScheduleState();
     for (int i = 0; i < 7; i++) {
-      debugPrint('added $i');
+      // debugPrint('added $i');
       schedule.add(PowerScheduleDay.fromInitState(initState, i));
       initState = PowerScheduleDay.increaseStateCounter(schedule.last.items.last.value);
     }

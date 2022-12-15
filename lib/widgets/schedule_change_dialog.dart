@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:provider/provider.dart';
 
 import '../providers/schedule_provider.dart';
@@ -13,12 +11,16 @@ class ScheduleChangeDialog extends StatelessWidget {
   Widget build(BuildContext context) {
     ScheduleProvider sp = Provider.of<ScheduleProvider>(context, listen: false);
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisSize: MainAxisSize.min,
         children: [
-          Text('Який графік на 00:00-03:00 Понелілка?'),
+          Text(
+            'Що показує офіційний графік відключень на 00:00 - 03:00 в Понеділок?',
+            style: TextStyle(fontSize: 16),
+            textAlign: TextAlign.center,
+          ),
           SizedBox(height: 16),
           _getButton(context, sp, -1, 'Світла немає'),
           _getButton(context, sp, 0, 'Може не бути'),

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:path/path.dart';
 import 'package:provider/provider.dart';
-import 'package:svitlo/models/power_schedule_day.dart';
-import 'package:svitlo/providers/schedule_provider.dart';
-import 'package:svitlo/widgets/schedule/schedule_row.dart';
+
+import '../models/power_schedule_day.dart';
+import '../providers/schedule_provider.dart';
+import '../widgets/schedule/schedule_row.dart';
+import '../widgets/schedule_change_dialog.dart';
 
 class GraphScreen extends StatefulWidget {
   static const String routeName = '/graph';
@@ -20,18 +21,6 @@ class _GraphScreenState extends State<GraphScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Графік'),
-        actions: [
-          IconButton(
-              onPressed: () => (showModalBottomSheet(
-                    context: context,
-                    builder: (_) => Container(
-                      padding: EdgeInsets.all(16),
-                      child: Text(
-                          'Щоб зренерувати новий графік, натисніть на верхню ліву комірку (перший квадратик понеділка) і виберіть значення, як в офіційнгму графіку'),
-                    ),
-                  )),
-              icon: Icon(Icons.help))
-        ],
       ),
       body: RefreshIndicator(
         onRefresh: (() => sp.fetchAndSet()),
@@ -46,6 +35,7 @@ class _GraphScreenState extends State<GraphScreen> {
                 _topTimeRow(context, sp.schedule[0]),
                 ...sp.schedule.map((e) => ScheduleRow(power_schedule_day: e)).toList(),
                 SizedBox(height: 32),
+                TextButton(onPressed: () => _getModalWindow(context), child: Text('Редагувати графік'))
               ],
             ),
           ),
@@ -54,10 +44,15 @@ class _GraphScreenState extends State<GraphScreen> {
     );
   }
 
+  Future<dynamic> _getModalWindow(BuildContext context) {
+    return showModalBottomSheet(context: context, builder: (_) => ScheduleChangeDialog());
+  }
+
   Widget _topTimeRow(BuildContext context, PowerScheduleDay psd) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        SizedBox(width: 42),
+        SizedBox(width: 48),
         ...psd.items
             .map((e) => Flexible(
                   child: Container(

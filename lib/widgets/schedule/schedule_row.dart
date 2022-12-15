@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:svitlo/models/power_schedule_day.dart';
-import 'package:svitlo/widgets/schedule_change_dialog.dart';
+
+import '../../models/power_schedule_day.dart';
 
 class ScheduleRow extends StatelessWidget {
   final PowerScheduleDay power_schedule_day;
@@ -12,6 +12,7 @@ class ScheduleRow extends StatelessWidget {
       padding: EdgeInsets.all(8),
       height: 50,
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           SizedBox(
             width: 24,
@@ -31,15 +32,32 @@ class ScheduleRow extends StatelessWidget {
     final bool thisTimeslot = now.weekday == day + 1 && now.hour >= i.time.hour && now.hour < i.time.hour + 3;
     return Flexible(
       child: InkWell(
-        onTap: (day == 0 && i.time.hour == 0) ? () => showModalBottomSheet(context: context, builder: (_) => ScheduleChangeDialog()) : () {},
+        onTap: () {
+          showModalBottomSheet(
+              context: context,
+              builder: (_) => Padding(
+                    padding: EdgeInsets.all(24),
+                    child: Row(
+                      children: [
+                        Icon(
+                          Icons.lightbulb,
+                          color: getColor(i.value),
+                        ),
+                        SizedBox(width: 16),
+                        Text(
+                            '${_getDaySrt(day)}, ${i.time.format(context)} - ${TimeOfDay(hour: i.time.hour + 3, minute: 0).format(context)}:\n${_getavailabilityText(i.value)}'),
+                      ],
+                    ),
+                  ));
+        },
         child: Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(5),
             border: !thisTimeslot ? Border.all(color: c, width: 2) : null,
             color: !thisTimeslot ? Colors.transparent : c,
           ),
-          width: double.infinity,
-          height: double.infinity,
+          width: 36,
+          height: 36,
           margin: EdgeInsets.only(left: 2),
         ),
       ),
@@ -76,5 +94,17 @@ class ScheduleRow extends StatelessWidget {
         return 'Нд';
     }
     return '';
+  }
+
+  String _getavailabilityText(int i) {
+    switch (i) {
+      case -1:
+        return 'Світла не буде';
+      case 0:
+        return 'Може буде, може ні';
+      case 1:
+        return 'Має бути';
+    }
+    return 'Хмм, якась помилка';
   }
 }
