@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:svitlo/providers/schedule_provider.dart';
+import 'package:svitlo/screens/tabs_screen.dart';
 
 import 'providers/points_provider.dart';
 import 'screens/graph_screen.dart';
@@ -28,12 +29,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'SvitloApp',
+      title: 'Де світло',
       theme: ThemeData(
         brightness: Brightness.dark,
         primarySwatch: Colors.blue,
       ),
-      home: const HomeScreen(title: 'Flutter Demo Home Page'),
+      home: const TabsScreen(),
       routes: {
         MapScreen.routeName: (_) => const MapScreen(),
         GraphScreen.routeName: (_) => const GraphScreen(),

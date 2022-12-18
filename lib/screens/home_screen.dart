@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 import '../providers/points_provider.dart';
+import '../widgets/about.dart';
 import '../widgets/active_dot.dart';
 import '../widgets/fav_button.dart';
 import '../widgets/graph_popup.dart';
-import 'graph_screen.dart';
-import 'map_screen.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key, required this.title}) : super(key: key);
-
-  final String title;
+  const HomeScreen({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,32 +22,11 @@ class HomeScreen extends StatelessWidget {
           appBar: AppBar(
             actions: [
               IconButton(
-                icon: const Icon(Icons.map),
-                onPressed: () => Navigator.of(context).pushNamed(MapScreen.routeName),
-              ),
-              IconButton(
-                icon: const Icon(Icons.auto_graph_sharp),
-                onPressed: () => Navigator.of(context).pushNamed(GraphScreen.routeName),
-              ),
-              IconButton(
                 icon: const Icon(Icons.info),
-                onPressed: () => showModalBottomSheet(
-                    context: context,
-                    builder: (_) => Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.symmetric(vertical: 16),
-                              child: Text('На основі даних сайту svitlo.ternopil.webcam'),
-                            ),
-                            SizedBox(
-                              height: 16,
-                            )
-                          ],
-                        )),
+                onPressed: () => showModalBottomSheet(context: context, builder: (_) => About()),
               ),
             ],
-            title: const Text('Де світло'),
+            title: const Text('Список'),
           ),
           body: Center(
             child: getList(value),
@@ -64,8 +43,19 @@ class HomeScreen extends StatelessWidget {
       );
     }
     if (!pp.dataLoaded) {
-      return const Center(
-        child: Text('Ой-йой, щось не так. Тут одне з двох:\n\n1. Або дані некоректно завантажились\n2. Або світла дійсно немає по всьому Тернополю'),
+      return Center(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text('Ой-йой, щось не так. Тут одне з двох:\n\n1. Або не вдалось отримати дані\n2. Або світла дійсно немає по всьому Тернополю'),
+            SizedBox(height: 16),
+            TextButton(
+                onPressed: () {
+                  launchUrlString('https://svitlo.ternopil.webcam');
+                },
+                child: Text('Перевірити, що показує сайт'))
+          ],
+        ),
       );
     }
     return RefreshIndicator(
