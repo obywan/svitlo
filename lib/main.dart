@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:svitlo/providers/schedule_provider.dart';
-import 'package:svitlo/screens/tabs_screen.dart';
 
 import 'providers/points_provider.dart';
+import 'providers/schedule_provider.dart';
 import 'screens/graph_screen.dart';
-import 'screens/home_screen.dart';
 import 'screens/map_screen.dart';
+import 'screens/tabs_screen.dart';
 
 void main() {
   runApp(

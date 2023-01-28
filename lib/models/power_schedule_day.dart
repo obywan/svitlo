@@ -26,8 +26,30 @@ class PowerScheduleDay {
     return PowerScheduleDay(items: itemsSetup, day: d);
   }
 
+  static PowerScheduleDay fromInitStateAndSequence(int init, int d, List<int> sequence) {
+    List<ScheduleItem> itemsSetup = [];
+    int currentIndex = sequence.indexOf(init);
+    // debugPrint('got init state $init and its index is $currentIndex');
+    for (int i = 0; i < 24; i += 3) {
+      itemsSetup.add(ScheduleItem(TimeOfDay(hour: i, minute: 0), sequence[currentIndex]));
+      currentIndex++;
+      if (currentIndex >= sequence.length) {
+        currentIndex = 0;
+      }
+    }
+    return PowerScheduleDay(items: itemsSetup, day: d);
+  }
+
   static int increaseStateCounter(int old) {
     return (old - 1 < -1) ? 1 : old - 1;
+  }
+
+  static int getNextFromSequence(List<int> seq, int current) {
+    current++;
+    if (current >= seq.length) {
+      current = 0;
+    }
+    return seq[current];
   }
 }
 

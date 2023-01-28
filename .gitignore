@@ -47,3 +47,5 @@ app.*.map.json
 upload-keystore.jks
 assets/icon/1024x500.png
 assets/icon/icon.png
+windows/flutter/generated_plugin_registrant.cc
+windows/flutter/generated_plugins.cmake
