@@ -45,11 +45,12 @@ class PowerScheduleDay {
   }
 
   static int getNextFromSequence(List<int> seq, int current) {
-    current++;
-    if (current >= seq.length) {
-      current = 0;
+    int currentIndex = seq.indexOf(current);
+    currentIndex++;
+    if (currentIndex >= seq.length) {
+      currentIndex = 0;
     }
-    return seq[current];
+    return seq[currentIndex];
   }
 }
 

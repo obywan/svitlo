@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:provider/provider.dart';
-import 'package:svitlo/models/point_item.dart';
 
 import '../helpers/api_request_helper.dart';
+import '../models/point_item.dart';
 import '../providers/points_provider.dart';
 import 'fav_button.dart';
 
@@ -14,6 +13,7 @@ class GraphPopup extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     PointsProvider pp = Provider.of<PointsProvider>(context);
+
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
@@ -22,6 +22,9 @@ class GraphPopup extends StatelessWidget {
           onTap: () => pp.favTap(point.hostId),
         ),
         Image.network('${ApiRequestsHelper.baseUrl}${point.graphUrl}'),
+        SizedBox(height: 8),
+        Text('Востаннє оновлено: ${point.updateDateTime}'),
+        SizedBox(height: 8),
       ],
     );
   }

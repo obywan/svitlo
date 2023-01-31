@@ -4,6 +4,7 @@ class AppSettings {
   static const String favs = 'favourites';
   static const String initScheduleState = 'initScheduleState';
   static const String scheduleSequence = 'scheduleSequence';
+  static const String scheduleTutorialSeen = 'scheduleTutorialSeen';
 
   static Future<List<int>> getFavs() async {
     final prefs = await SharedPreferences.getInstance();
@@ -62,5 +63,17 @@ class AppSettings {
       return list.map((e) => int.parse(e)).toList();
     }
     return [-1, 0, 1];
+  }
+
+  static Future<void> _setTutorialSeen() async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setBool(scheduleTutorialSeen, true);
+  }
+
+  static Future<bool> getTutorialSeen() async {
+    final prefs = await SharedPreferences.getInstance();
+    final res = prefs.containsKey(scheduleTutorialSeen);
+    await _setTutorialSeen();
+    return res;
   }
 }

@@ -70,6 +70,9 @@ class HomeScreen extends StatelessWidget {
               );
             },
             title: Text(pp.points[index].hostName),
+            subtitle: DateTime.now().difference(DateTime.fromMillisecondsSinceEpoch(pp.points[index].history.last.clock * 1000)).inMinutes > 10
+                ? Text('оновлено: ${pp.points[index].updateTime}')
+                : null,
             leading: ActiveDot(size: 16, active: pp.points[index].active),
             trailing: FavButton(
               favourite: pp.isFav(pp.points[index].hostId),
