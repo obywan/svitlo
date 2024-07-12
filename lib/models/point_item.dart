@@ -28,13 +28,14 @@ class PointItem {
   static PointItem fromJson(Map<String, dynamic> json) {
     // debugPrint('${json['history']}');
     final List<HistoryItem> hst = List<HistoryItem>.from((json['history']).map((e) => HistoryItem.fromJson(e)));
+    final coords = LatLng(Angle.degree(double.parse(json['inventory_location_lat'])), Angle.degree(double.parse(json['inventory_location_lon'])));
 
     return PointItem(
       hostId: int.parse(json['hostid']),
       history: hst,
       hostName: json['host'],
       graphUrl: json['graph_url'],
-      pos: LatLng(double.parse(json['inventory_location_lat']), double.parse(json['inventory_location_lon'])),
+      pos: coords,
       active: hst.last.value,
       dataloaded: hst.isNotEmpty,
     );

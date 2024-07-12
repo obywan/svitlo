@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:svitlo/providers/points_provider.dart';
+// import 'package:flutter/src/foundation/key.dart';
+// import 'package:flutter/src/widgets/container.dart';
+// import 'package:flutter/src/widgets/framework.dart';
+// import '../providers/points_provider.dart';
 
 class FavButton extends StatelessWidget {
   final bool favourite;

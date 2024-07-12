@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:svitlo/screens/graph_screen.dart';
-import 'package:svitlo/screens/home_screen.dart';
-import 'package:svitlo/screens/map_screen.dart';
+import 'package:svitlo/screens/queue_graph.dart';
+import 'graph_screen.dart';
+import 'home_screen.dart';
+import 'map_screen.dart';
 
 class TabsScreen extends StatefulWidget {
   const TabsScreen({Key? key}) : super(key: key);
@@ -13,11 +14,12 @@ class TabsScreen extends StatefulWidget {
 class _TabsScreenState extends State<TabsScreen> {
   int _selectedIndex = 0;
 
-  static const TextStyle optionStyle = TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
+  // static const TextStyle optionStyle = TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[
     HomeScreen(),
     MapScreen(),
-    GraphScreen(),
+    QueueGraph()
+    // GraphScreen(),
   ];
 
   void _onItemTapped(int index) {

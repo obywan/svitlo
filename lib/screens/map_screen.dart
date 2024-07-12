@@ -22,7 +22,7 @@ class MapScreen extends StatefulWidget {
 }
 
 class _MapScreenState extends State<MapScreen> {
-  static const defaultPos = LatLng(49.55, 25.59);
+  static const defaultPos = LatLng(Angle.degree(49.55), Angle.degree(25.59));
   final controller = MapController(
     location: defaultPos,
   );

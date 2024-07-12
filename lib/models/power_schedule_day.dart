@@ -8,29 +8,29 @@ class PowerScheduleDay {
 
   PowerScheduleDay({required this.items, required this.day});
 
-  static PowerScheduleDay randomDummy(int d) {
+  static PowerScheduleDay randomDummy(int d, int step) {
     List<ScheduleItem> itemsSetup = [];
-    for (int i = 0; i < 24; i += 3) {
+    for (int i = 0; i < 24; i += step) {
       itemsSetup.add(ScheduleItem(TimeOfDay(hour: i, minute: 0), 1 - Random.secure().nextInt(3)));
     }
     return PowerScheduleDay(items: itemsSetup, day: d);
   }
 
-  static PowerScheduleDay fromInitState(int init, int d) {
+  static PowerScheduleDay fromInitState(int init, int d, int step) {
     List<ScheduleItem> itemsSetup = [];
     int state = init;
-    for (int i = 0; i < 24; i += 3) {
+    for (int i = 0; i < 24; i += step) {
       itemsSetup.add(ScheduleItem(TimeOfDay(hour: i, minute: 0), state));
       state = increaseStateCounter(state);
     }
     return PowerScheduleDay(items: itemsSetup, day: d);
   }
 
-  static PowerScheduleDay fromInitStateAndSequence(int init, int d, List<int> sequence) {
+  static PowerScheduleDay fromInitStateAndSequence(int init, int d, int step, List<int> sequence) {
     List<ScheduleItem> itemsSetup = [];
     int currentIndex = sequence.indexOf(init);
     // debugPrint('got init state $init and its index is $currentIndex');
-    for (int i = 0; i < 24; i += 3) {
+    for (int i = 0; i < 24; i += step) {
       itemsSetup.add(ScheduleItem(TimeOfDay(hour: i, minute: 0), sequence[currentIndex]));
       currentIndex++;
       if (currentIndex >= sequence.length) {
@@ -59,7 +59,7 @@ class ScheduleItem {
   // -1 — no power for sure
   // 0 — maybe no power
   // 1 — lights on!
-  final int value;
+  int value;
 
   ScheduleItem(this.time, this.value);
 }
