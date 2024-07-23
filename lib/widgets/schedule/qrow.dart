@@ -14,7 +14,7 @@ class QRow extends StatelessWidget {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        Text('${queue.queue}'),
+        Text('${queue.queue} черга'),
         Container(
             height: 24,
             child: Row(

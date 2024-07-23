@@ -15,6 +15,7 @@ class ScheduleProvider with ChangeNotifier {
   List<PowerScheduleDay> schedule = [];
   List<int> defaultSequence = [-1, 0, 1];
   List<int> sequence = [];
+  String seqDate = '?';
   List<QueueSchedule> qSchedule =
       List.generate(6, (int index) => QueueSchedule(queue: index + 1));
 
@@ -46,11 +47,11 @@ class ScheduleProvider with ChangeNotifier {
     }
     int initState = await AppSettings.getInitScheduleState();
     for (int i = 0; i < 7; i++) {
-      debugPrint('init state is $initState');
+      // debugPrint('init state is $initState');
       schedule.add(
           PowerScheduleDay.fromInitStateAndSequence(initState, i, 3, sequence));
       final lastValue = schedule.last.items.last.value;
-      debugPrint('last index $lastValue');
+      // debugPrint('last index $lastValue');
       initState = PowerScheduleDay.getNextFromSequence(sequence, lastValue);
     }
     await generateScheduleForOneDay();
@@ -67,26 +68,26 @@ class ScheduleProvider with ChangeNotifier {
     final result = await ApiRequestsHelper.genericRequest(
         http.get(Uri.parse('https://api.toe.com.ua/api/content/idNews/71')));
 
+    RegExp regex = RegExp(r"\d{2}:\d{2}-\d{2}:\d{2}&nbsp;\s+\d+");
+
     if (result.success) {
-      final htlmJSON = jsonDecode(result.body)['text'];
+      final String htmlText = jsonDecode(result.body)['text'];
 
-      final String substr = htlmJSON.substring(
-          htlmJSON.indexOf('<p><strong>'), htlmJSON.indexOf('</strong></p>'));
+      Iterable<Match> matches = regex.allMatches(htmlText);
 
-      List<String> rawSchedule = substr.split('<br>');
-      if (rawSchedule.length <= 0) {
-        debugPrint('no content');
-        return false;
-      }
-      rawSchedule = rawSchedule
-          .map((s) => s
-              .replaceAll(RegExp(r'(<p>|strong|<|>|\/|&nbsp;|черга)'), '')
-              .trim())
+      seqDate = htmlText.substring(
+          htmlText.indexOf('Тернопільській області') +
+              'Вимкнення електроенергії'.length -
+              1,
+          htmlText.indexOf(', плануються'));
+
+      List<String> rawSchedule = matches
+          .map((m) => m.group(0)!.replaceAll(RegExp(r'&nbsp;'), ''))
           .toList();
       for (final singleString in rawSchedule) {
         updateQueue(singleString);
       }
-      for(final q in qSchedule){
+      for (final q in qSchedule) {
         debugPrint('${q.hours[0].time.hour}');
       }
       return true;
@@ -96,8 +97,10 @@ class ScheduleProvider with ChangeNotifier {
     return false;
   }
 
-  void updateQueue(String item){
+  void updateQueue(String item) {
     final s = item.split(' ');
-    qSchedule.firstWhere((element) => element.queue == int.parse(s[1])).update(s[0]);
+    qSchedule
+        .firstWhere((element) => element.queue == int.parse(s[1]))
+        .update(s[0]);
   }
 }

@@ -35,6 +35,7 @@ class _QueueGraphState extends State<QueueGraph> {
                   return Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
+                      Text(sp.seqDate),
                       SizedBox(
                         height: 16,
                       ),
