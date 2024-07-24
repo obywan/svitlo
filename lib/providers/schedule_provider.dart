@@ -16,8 +16,8 @@ class ScheduleProvider with ChangeNotifier {
   List<int> defaultSequence = [-1, 0, 1];
   List<int> sequence = [];
   String seqDate = '?';
-  List<QueueSchedule> qSchedule =
-      List.generate(6, (int index) => QueueSchedule(queue: index + 1));
+  List<QueueSchedule> qSchedule = [];
+      
 
   List<PowerScheduleDay> dummySchedule = List<PowerScheduleDay>.generate(
       7, (index) => PowerScheduleDay.randomDummy(index, 3));
@@ -64,6 +64,7 @@ class ScheduleProvider with ChangeNotifier {
   }
 
   Future<bool> generateScheduleForOneDay() async {
+    qSchedule = List.generate(6, (int index) => QueueSchedule(queue: index + 1));
     debugPrint('requesting TOE');
     final result = await ApiRequestsHelper.genericRequest(
         http.get(Uri.parse('https://api.toe.com.ua/api/content/idNews/71')));
