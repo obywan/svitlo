@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:intl/intl.dart';
 // import 'package:html/dom.dart';
 import 'package:svitlo/helpers/api_request_helper.dart';
 import 'package:svitlo/helpers/app_settings.dart';
@@ -17,7 +18,6 @@ class ScheduleProvider with ChangeNotifier {
   List<int> sequence = [];
   String seqDate = '?';
   List<QueueSchedule> qSchedule = [];
-      
 
   List<PowerScheduleDay> dummySchedule = List<PowerScheduleDay>.generate(
       7, (index) => PowerScheduleDay.randomDummy(index, 3));
@@ -64,33 +64,47 @@ class ScheduleProvider with ChangeNotifier {
   }
 
   Future<bool> generateScheduleForOneDay() async {
-    qSchedule = List.generate(6, (int index) => QueueSchedule(queue: index + 1));
+    qSchedule =
+        List.generate(6, (int index) => QueueSchedule(queue: index + 1));
     debugPrint('requesting TOE');
     final result = await ApiRequestsHelper.genericRequest(
         http.get(Uri.parse('https://api.toe.com.ua/api/content/idNews/71')));
 
-    RegExp regex = RegExp(r"\d{2}:\d{2}-\d{2}:\d{2}&nbsp;\s+\d+");
+    RegExp regex = RegExp(r"\d{2}:\d{2}-\d{2}:\d{2}\d+");
+    RegExp dateRegex = RegExp(
+        r"\d+(січня|лютого|березня|квітня|травня|червня|липня|серпня|вересня|жовтня|листопада|грудня)");
 
     if (result.success) {
-      final String htmlText = jsonDecode(result.body)['text'];
+      String htmlText = jsonDecode(result.body)['text'];
+      htmlText = Bidi.stripHtmlIfNeeded(
+              htmlText.substring(0, htmlText.indexOf('table')))
+          .replaceAll(' ', '')
+          .replaceAll('черга', '\n');
+      seqDate = dateRegex.firstMatch(htmlText)!.group(0)!;
+
+      // debugPrint(htmlText);
 
       Iterable<Match> matches = regex.allMatches(htmlText);
+      // debugPrint('${matches.length}');
+      int j = 0;
+      matches.forEach((m) {
 
-      seqDate = htmlText.substring(
-          htmlText.indexOf('Тернопільській області') +
-              'Вимкнення електроенергії'.length -
-              1,
-          htmlText.indexOf(', плануються'));
+        debugPrint('$j: ${m.group(0)}');
+        j++;
+        updateQueue(m.group(0)!);
+      });
 
-      List<String> rawSchedule = matches
-          .map((m) => m.group(0)!.replaceAll(RegExp(r'&nbsp;'), ''))
-          .toList();
-      for (final singleString in rawSchedule) {
-        updateQueue(singleString);
-      }
-      for (final q in qSchedule) {
-        debugPrint('${q.hours[0].time.hour}');
-      }
+      // List<String> rawSchedule = matches
+      //     .map((m) => m.group(0)!)
+      //     .toList();
+      // for (final singleString in rawSchedule) {
+      // debugPrint(singleString);
+
+      //   updateQueue(singleString);
+      // }
+      // for (final q in qSchedule) {
+      //   debugPrint('${q.hours[0].time.hour}');
+      // }
       return true;
     } else {
       debugPrint('failed');
@@ -99,9 +113,13 @@ class ScheduleProvider with ChangeNotifier {
   }
 
   void updateQueue(String item) {
-    final s = item.split(' ');
+    debugPrint(item);
+    final time = item.substring(0, item.length - 1);
+    debugPrint(time);
+    final group = item.substring(item.length - 1, item.length);
+    debugPrint(group);
     qSchedule
-        .firstWhere((element) => element.queue == int.parse(s[1]))
-        .update(s[0]);
+        .firstWhere((element) => element.queue == int.parse(group))
+        .update(time);
   }
 }

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:svitlo/screens/queue_graph.dart';
-import 'graph_screen.dart';
+
 import 'home_screen.dart';
 import 'map_screen.dart';
+import 'queue_graph.dart';
 
 class TabsScreen extends StatefulWidget {
   const TabsScreen({Key? key}) : super(key: key);

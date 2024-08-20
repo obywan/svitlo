@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
-import '../helpers/app_settings.dart';
-import '../models/queueschedule.dart';
 
+import '../models/queueschedule.dart';
 import '../providers/schedule_provider.dart';
-import '../widgets/graph_tutorial.dart';
 import '../widgets/schedule/qrow.dart';
-import '../widgets/schedule/schedule_row.dart';
 import '../widgets/schedule_change_dialog.dart';
 
 class QueueGraph extends StatefulWidget {
