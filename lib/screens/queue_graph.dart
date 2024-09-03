@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:svitlo/widgets/ad_banner.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../models/queueschedule.dart';
 import '../providers/schedule_provider.dart';
@@ -22,36 +24,59 @@ class _QueueGraphState extends State<QueueGraph> {
       appBar: AppBar(title: Text('Графік')),
       body: RefreshIndicator(
         onRefresh: (() => sp.fetchAndSet()),
-        child: SingleChildScrollView(
-          child: Center(
-            child: FutureBuilder(
-              future: sp.generateSchedule(),
-              builder: (_, snapshot) {
-                if (snapshot.connectionState == ConnectionState.done) {
-                  return Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Text(sp.seqDate),
-                      SizedBox(
-                        height: 16,
-                      ),
-                      // _topTimeRow(context, sp.qSchedule[0]),
-                      ...sp.qSchedule
-                          .map((e) => QRow(
-                                queue: e,
-                              ))
-                          .toList(),
-                      SizedBox(height: 32),
-                    ],
-                  );
-                }
-                return CircularProgressIndicator();
-              },
-            ),
-          ),
+        child: _getScrollViewWithQueue(sp),
+      ),
+    );
+  }
+
+  SingleChildScrollView _getScrollViewWithQueue(ScheduleProvider sp) {
+    return SingleChildScrollView(
+      child: Center(
+        child: FutureBuilder(
+          future: sp.generateSchedule(),
+          builder: (_, snapshot) {
+            if (snapshot.connectionState == ConnectionState.done) {
+              return sp.seqDate == '?'
+                  ? Center(
+                      child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text('Не вдалось отримати графік'),
+                        TextButton(
+                            onPressed: () {
+                              _launchUrl('https://www.toe.com.ua/news/71');
+                            },
+                            child: Text('Перевірити графік на сайті'))
+                      ],
+                    ))
+                  : Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(sp.seqDate),
+                        SizedBox(
+                          height: 16,
+                        ),
+                        // _topTimeRow(context, sp.qSchedule[0]),
+                        ...sp.qSchedule
+                            .map((e) => QRow(
+                                  queue: e,
+                                ))
+                            .toList(),
+                        // AdBanner(),
+                      ],
+                    );
+            }
+            return CircularProgressIndicator();
+          },
         ),
       ),
     );
+  }
+
+  Future<void> _launchUrl(String _url) async {
+    if (!await launchUrl(Uri.parse(_url))) {
+      throw Exception('Could not launch $_url');
+    }
   }
 
   Future<dynamic> _getModalWindow(BuildContext context) {

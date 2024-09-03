@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+// import 'package:unity_ads_plugin/unity_ads_plugin.dart';
 
 import 'providers/points_provider.dart';
 import 'providers/schedule_provider.dart';
@@ -8,6 +9,14 @@ import 'screens/map_screen.dart';
 import 'screens/tabs_screen.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  // UnityAds.init(
+  //   gameId: '5682683',
+  //   testMode: true,
+  //   onComplete: () => print('Initialization Complete'),
+  //   onFailed: (error, message) =>
+  //       print('Initialization Failed: $error $message'),
+  // );
   runApp(
     MultiProvider(
       providers: [

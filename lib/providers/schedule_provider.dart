@@ -72,7 +72,7 @@ class ScheduleProvider with ChangeNotifier {
 
     RegExp regex = RegExp(r"\d{2}:\d{2}-\d{2}:\d{2}\d+");
     RegExp dateRegex = RegExp(
-        r"\d+(січня|лютого|березня|квітня|травня|червня|липня|серпня|вересня|жовтня|листопада|грудня)");
+        r"(\d+(січня|лютого|березня|квітня|травня|червня|липня|серпня|вересня|жовтня|листопада|грудня))|(\d{2}.\d{2}.\d{4})");
 
     if (result.success) {
       String htmlText = jsonDecode(result.body)['text'];
@@ -82,7 +82,7 @@ class ScheduleProvider with ChangeNotifier {
           .replaceAll('черга', '\n');
       seqDate = dateRegex.firstMatch(htmlText)!.group(0)!;
 
-      // debugPrint(htmlText);
+      debugPrint(htmlText);
 
       Iterable<Match> matches = regex.allMatches(htmlText);
       // debugPrint('${matches.length}');
