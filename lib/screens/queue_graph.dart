@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:svitlo/widgets/ad_banner.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../models/queueschedule.dart';
@@ -42,11 +41,7 @@ class _QueueGraphState extends State<QueueGraph> {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Text('Не вдалось отримати графік'),
-                        TextButton(
-                            onPressed: () {
-                              _launchUrl('https://www.toe.com.ua/news/71');
-                            },
-                            child: Text('Перевірити графік на сайті'))
+                        checkTOEWebsite(),
                       ],
                     ))
                   : Column(
@@ -62,6 +57,10 @@ class _QueueGraphState extends State<QueueGraph> {
                                   queue: e,
                                 ))
                             .toList(),
+                        SizedBox(
+                          height: 8,
+                        ),
+                        checkTOEWebsite(),
                         // AdBanner(),
                       ],
                     );
@@ -73,6 +72,14 @@ class _QueueGraphState extends State<QueueGraph> {
     );
   }
 
+  TextButton checkTOEWebsite() {
+    return TextButton(
+        onPressed: () {
+          _launchUrl('https://www.toe.com.ua/news/71');
+        },
+        child: Text('Перевірити графік на сайті'));
+  }
+
   Future<void> _launchUrl(String _url) async {
     if (!await launchUrl(Uri.parse(_url))) {
       throw Exception('Could not launch $_url');
@@ -80,8 +87,7 @@ class _QueueGraphState extends State<QueueGraph> {
   }
 
   Future<dynamic> _getModalWindow(BuildContext context) {
-    return showModalBottomSheet(
-        context: context, builder: (_) => ScheduleChangeDialog());
+    return showModalBottomSheet(context: context, builder: (_) => ScheduleChangeDialog());
   }
 
   Widget _topTimeRow(BuildContext context, QueueSchedule psd) {
