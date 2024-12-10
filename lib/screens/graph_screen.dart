@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../helpers/app_settings.dart';
 
+import '../helpers/app_settings.dart';
 import '../models/power_schedule_day.dart';
 import '../providers/schedule_provider.dart';
 import '../widgets/graph_tutorial.dart';
-import '../widgets/schedule/schedule_row.dart';
 import '../widgets/schedule_change_dialog.dart';
 
 class GraphScreen extends StatefulWidget {
@@ -31,6 +30,7 @@ class _GraphScreenState extends State<GraphScreen> {
       body: RefreshIndicator(
         onRefresh: (() => sp.fetchAndSet()),
         child: SingleChildScrollView(
+          physics: const AlwaysScrollableScrollPhysics(),
           child: Center(
             child: FutureBuilder(
               future: sp.generateSchedule(),
@@ -42,8 +42,8 @@ class _GraphScreenState extends State<GraphScreen> {
                       SizedBox(
                         height: 16,
                       ),
-                      _topTimeRow(context, sp.schedule[0]),
-                      ...sp.schedule.map((e) => ScheduleRow(power_schedule_day: e)).toList(),
+                      // _topTimeRow(context, sp.schedule[0]),
+                      // ...sp.schedule.map((e) => ScheduleRow(power_schedule_day: e)).toList(),
                       SizedBox(height: 32),
                       TextButton(onPressed: () => _getModalWindow(context), child: Text('Редагувати графік'))
                     ],

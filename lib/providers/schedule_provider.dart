@@ -19,8 +19,7 @@ class ScheduleProvider with ChangeNotifier {
   String seqDate = '?';
   List<QueueSchedule> qSchedule = [];
 
-  List<PowerScheduleDay> dummySchedule = List<PowerScheduleDay>.generate(
-      7, (index) => PowerScheduleDay.randomDummy(index, 3));
+  List<PowerScheduleDay> dummySchedule = List<PowerScheduleDay>.generate(7, (index) => PowerScheduleDay.randomDummy(index, 3));
 
   // ScheduleProvider() {
   //   // generateSchedule();
@@ -34,26 +33,28 @@ class ScheduleProvider with ChangeNotifier {
   }
 
   Future<void> generateSchedule() async {
-    schedule.clear();
-    if (sequence.isEmpty) {
-      final result = await ApiRequestsHelper.genericRequest(http.get(Uri.parse(
-          'http://threekit.3dconfiguration.com/maptest/files/seq.json')));
-      if (result.success) {
-        print(result.body);
-        sequence = List<int>.from(jsonDecode(result.body));
-      } else {
-        sequence = defaultSequence;
-      }
-    }
-    int initState = await AppSettings.getInitScheduleState();
-    for (int i = 0; i < 7; i++) {
-      // debugPrint('init state is $initState');
-      schedule.add(
-          PowerScheduleDay.fromInitStateAndSequence(initState, i, 3, sequence));
-      final lastValue = schedule.last.items.last.value;
-      // debugPrint('last index $lastValue');
-      initState = PowerScheduleDay.getNextFromSequence(sequence, lastValue);
-    }
+    qSchedule = [];
+    seqDate = '?';
+    // schedule.clear();
+    // if (sequence.isEmpty) {
+    //   final result = await ApiRequestsHelper.genericRequest(http.get(Uri.parse(
+    //       'http://threekit.3dconfiguration.com/maptest/files/seq.json')));
+    //   if (result.success) {
+    //     print(result.body);
+    //     sequence = List<int>.from(jsonDecode(result.body));
+    //   } else {
+    //     sequence = defaultSequence;
+    //   }
+    // }
+    // int initState = await AppSettings.getInitScheduleState();
+    // for (int i = 0; i < 7; i++) {
+    //   // debugPrint('init state is $initState');
+    //   schedule.add(
+    //       PowerScheduleDay.fromInitStateAndSequence(initState, i, 3, sequence));
+    //   final lastValue = schedule.last.items.last.value;
+    //   // debugPrint('last index $lastValue');
+    //   initState = PowerScheduleDay.getNextFromSequence(sequence, lastValue);
+    // }
     await generateScheduleForOneDay();
   }
 
@@ -64,22 +65,16 @@ class ScheduleProvider with ChangeNotifier {
   }
 
   Future<bool> generateScheduleForOneDay() async {
-    qSchedule =
-        List.generate(6, (int index) => QueueSchedule(queue: index + 1));
+    qSchedule = List.generate(6, (int index) => QueueSchedule(queue: index + 1));
     debugPrint('requesting TOE');
-    final result = await ApiRequestsHelper.genericRequest(
-        http.get(Uri.parse('https://api.toe.com.ua/api/content/idNews/71')));
+    final result = await ApiRequestsHelper.genericRequest(http.get(Uri.parse('https://api.toe.com.ua/api/content/idNews/71')));
 
     RegExp regex = RegExp(r"\d{2}:\d{2}-\d{2}:\d{2}\d+");
-    RegExp dateRegex = RegExp(
-        r"(\d+(січня|лютого|березня|квітня|травня|червня|липня|серпня|вересня|жовтня|листопада|грудня))|(\d{2}.\d{2}.\d{4})");
+    RegExp dateRegex = RegExp(r"(\d+(січня|лютого|березня|квітня|травня|червня|липня|серпня|вересня|жовтня|листопада|грудня))|(\d{2}.\d{2}.\d{4})");
 
     if (result.success) {
       String htmlText = jsonDecode(result.body)['text'];
-      htmlText = Bidi.stripHtmlIfNeeded(
-              htmlText.substring(0, htmlText.indexOf('table')))
-          .replaceAll(' ', '')
-          .replaceAll('черга', '\n');
+      htmlText = Bidi.stripHtmlIfNeeded(htmlText.substring(0, htmlText.indexOf('table'))).replaceAll(' ', '').replaceAll('черга', '\n');
       seqDate = dateRegex.firstMatch(htmlText)!.group(0)!;
 
       debugPrint(htmlText);
@@ -88,7 +83,6 @@ class ScheduleProvider with ChangeNotifier {
       // debugPrint('${matches.length}');
       int j = 0;
       matches.forEach((m) {
-
         debugPrint('$j: ${m.group(0)}');
         j++;
         updateQueue(m.group(0)!);
@@ -118,8 +112,6 @@ class ScheduleProvider with ChangeNotifier {
     debugPrint(time);
     final group = item.substring(item.length - 1, item.length);
     debugPrint(group);
-    qSchedule
-        .firstWhere((element) => element.queue == int.parse(group))
-        .update(time);
+    qSchedule.firstWhere((element) => element.queue == int.parse(group)).update(time);
   }
 }

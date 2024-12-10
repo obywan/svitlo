@@ -22,7 +22,7 @@ class _QueueGraphState extends State<QueueGraph> {
     return Scaffold(
       appBar: AppBar(title: Text('Графік')),
       body: RefreshIndicator(
-        onRefresh: (() => sp.fetchAndSet()),
+        onRefresh: (() => sp.generateSchedule()),
         child: _getScrollViewWithQueue(sp),
       ),
     );
@@ -30,6 +30,7 @@ class _QueueGraphState extends State<QueueGraph> {
 
   SingleChildScrollView _getScrollViewWithQueue(ScheduleProvider sp) {
     return SingleChildScrollView(
+      physics: const AlwaysScrollableScrollPhysics(),
       child: Center(
         child: FutureBuilder(
           future: sp.generateSchedule(),
