@@ -23,32 +23,19 @@ if (flutterVersionName == null) {
 }
 
 def keystoreProperties = new Properties()
-   def keystorePropertiesFile = rootProject.file('key.properties')
+   def keystorePropertiesFile = file("C:\\Users\\golod\\Documents\\work\\github_repos\\KS\\svitlo\\key.properties")
    if (keystorePropertiesFile.exists()) {
        keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
    }
 
 android {
-    compileSdkVersion flutter.compileSdkVersion
-
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
-
-    kotlinOptions {
-        jvmTarget = '1.8'
-    }
-
-    sourceSets {
-        main.java.srcDirs += 'src/main/kotlin'
-    }
+    compileSdkVersion 36
 
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId "com.golodyukoleg.svitlo"
         minSdkVersion flutter.minSdkVersion
-        targetSdkVersion flutter.targetSdkVersion
+        targetSdkVersion 36
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
     }
@@ -67,6 +54,10 @@ android {
        }
    }
     namespace 'com.example.svitlo'
+}
+
+kotlin {
+  jvmToolchain(21)
 }
 
 flutter {

@@ -34,7 +34,7 @@ class PointItem {
       hostId: int.parse(json['hostid']),
       history: hst,
       hostName: json['host'],
-      graphUrl: json['graph_url'],
+      graphUrl: json['graph_url'].toString().replaceFirst('/static/', '/static/js/'),
       pos: coords,
       active: hst.last.value,
       dataloaded: hst.isNotEmpty,
