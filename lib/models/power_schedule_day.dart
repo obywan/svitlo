@@ -40,6 +40,30 @@ class PowerScheduleDay {
     return PowerScheduleDay(items: itemsSetup, day: d);
   }
 
+  static List<ScheduleItem> scheduleFromGithub(Map<String, dynamic> json) {
+    List<ScheduleItem> s = json.entries.map((e) {
+      int hour = int.parse(e.key);
+      int value;
+      switch (e.value) {
+        case 'no':
+          value = -1;
+          break;
+        case 'mfirst':
+        case 'msecond':
+          value = 0;
+          break;
+        case 'yes':
+          value = 1;
+          break;
+        default:
+          value = 0;
+      }
+      return ScheduleItem(TimeOfDay(hour: hour, minute: 0), value);
+    }).toList();
+
+    return s;
+  }
+
   static int increaseStateCounter(int old) {
     return (old - 1 < -1) ? 1 : old - 1;
   }

@@ -1,7 +1,6 @@
 import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
-import 'package:flutter/services.dart' show rootBundle;
 
 import '../helpers/api_request_helper.dart';
 import '../helpers/app_settings.dart';
@@ -42,11 +41,6 @@ class PointsProvider with ChangeNotifier {
       dataLoaded = false;
     }
     // notifyListeners();
-  }
-
-  Future<String> _loadAsset(String asset) async {
-    // return await DefaultAssetBundle.of(context).loadString('assets/text/tac.txt');
-    return await rootBundle.loadString(asset);
   }
 
   Future<void> favTap(int index) async {

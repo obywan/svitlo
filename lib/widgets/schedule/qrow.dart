@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:svitlo/models/power_schedule_day.dart';
 import 'package:svitlo/models/queueschedule.dart';
 
 class QRow extends StatelessWidget {
-  final QueueSchedule queue;
+  final GPV queue;
   const QRow({
     Key? key,
     required this.queue,
@@ -14,20 +15,18 @@ class QRow extends StatelessWidget {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        Text('${queue.queue} черга'),
+        Text('${queue.name} черга'),
         Container(
             height: 24,
             child: Row(
               children: [
-                ...queue.hours.map(
+                ...queue.scheduleItems.map(
                   (toElement) => Flexible(
                     child: Container(
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(5),
-                        border: currentHour == toElement.time.hour
-                            ? Border.all(color: Colors.white, width: 1)
-                            : null,
-                        color: toElement.value > 0 ? Colors.green : Colors.red,
+                        border: currentHour == toElement.time.hour ? Border.all(color: Colors.white, width: 1) : null,
+                        color: getTileColor(toElement),
                       ),
                       alignment: Alignment.center,
                       child: Text(
@@ -45,5 +44,18 @@ class QRow extends StatelessWidget {
         SizedBox(height: 24),
       ],
     );
+  }
+
+  MaterialColor getTileColor(ScheduleItem toElement) {
+    switch (toElement.value) {
+      case -1:
+        return Colors.red;
+      case 0:
+        return Colors.yellow;
+      case 1:
+        return Colors.green;
+      default:
+        return Colors.grey;
+    }
   }
 }

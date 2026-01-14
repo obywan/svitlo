@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
-
-import '../models/queueschedule.dart';
 import '../providers/schedule_provider.dart';
 import '../widgets/schedule/qrow.dart';
-import '../widgets/schedule_change_dialog.dart';
 
 class QueueGraph extends StatefulWidget {
   static const String routeName = '/graph';
@@ -36,7 +34,7 @@ class _QueueGraphState extends State<QueueGraph> {
           future: sp.generateSchedule(),
           builder: (_, snapshot) {
             if (snapshot.connectionState == ConnectionState.done) {
-              return sp.seqDate == '?'
+              return sp.scheduleResponse == null
                   ? Center(
                       child: Column(
                       mainAxisSize: MainAxisSize.min,
@@ -48,12 +46,12 @@ class _QueueGraphState extends State<QueueGraph> {
                   : Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Text(sp.seqDate),
+                        Text(DateFormat('d MMMM y').format(sp.scheduleResponse!.fact.data.date)),
                         SizedBox(
                           height: 16,
                         ),
                         // _topTimeRow(context, sp.qSchedule[0]),
-                        ...sp.qSchedule
+                        ...sp.scheduleResponse!.fact.data.gpvList
                             .map((e) => QRow(
                                   queue: e,
                                 ))
@@ -85,30 +83,5 @@ class _QueueGraphState extends State<QueueGraph> {
     if (!await launchUrl(Uri.parse(_url))) {
       throw Exception('Could not launch $_url');
     }
-  }
-
-  Future<dynamic> _getModalWindow(BuildContext context) {
-    return showModalBottomSheet(context: context, builder: (_) => ScheduleChangeDialog());
-  }
-
-  Widget _topTimeRow(BuildContext context, QueueSchedule psd) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: [
-        ...psd.hours
-            .map((e) => Flexible(
-                  child: Container(
-                    width: double.infinity,
-                    height: 16,
-                    margin: EdgeInsets.only(left: 2),
-                    child: Text(
-                      '${e.time.hour}',
-                      style: TextStyle(fontSize: 10),
-                    ),
-                  ),
-                ))
-            .toList()
-      ],
-    );
   }
 }

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../helpers/app_settings.dart';
-import '../models/power_schedule_day.dart';
 import '../providers/schedule_provider.dart';
 import '../widgets/graph_tutorial.dart';
 import '../widgets/schedule_change_dialog.dart';
@@ -19,7 +18,7 @@ class _GraphScreenState extends State<GraphScreen> {
   @override
   Widget build(BuildContext context) {
     ScheduleProvider sp = Provider.of<ScheduleProvider>(context);
-    checkTutorial();
+    // checkTutorial();
     return Scaffold(
       appBar: AppBar(title: Text('Графік'), actions: [
         IconButton(
@@ -67,27 +66,5 @@ class _GraphScreenState extends State<GraphScreen> {
     if (!tutorialSeen) {
       showModalBottomSheet(context: context, builder: (_) => GraphTutorial());
     }
-  }
-
-  Widget _topTimeRow(BuildContext context, PowerScheduleDay psd) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: [
-        SizedBox(width: 48),
-        ...psd.items
-            .map((e) => Flexible(
-                  child: Container(
-                    width: double.infinity,
-                    height: 16,
-                    margin: EdgeInsets.only(left: 2),
-                    child: Text(
-                      '${e.time.hour}-${e.time.hour + 3}',
-                      style: TextStyle(fontSize: 12),
-                    ),
-                  ),
-                ))
-            .toList()
-      ],
-    );
   }
 }
