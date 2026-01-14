@@ -54,14 +54,16 @@ class Fact {
         int value;
         switch (state) {
           case 'no':
-            value = -1;
+            value = -2;
             break;
           case 'mfirst':
+            value = -1;
+            break;
           case 'msecond':
-            value = 0;
+            value = 1;
             break;
           case 'yes':
-            value = 1;
+            value = 2;
             break;
           default:
             value = 0;
@@ -69,6 +71,7 @@ class Fact {
         scheduleItems.add(ScheduleItem(TimeOfDay(hour: hourInt, minute: 0), value));
       });
       gpvList.add(GPV(name: groupName.replaceAll('GPV', ''), scheduleItems: scheduleItems));
+      gpvList.last.generateOutageSpans();
     });
 
     return Fact(
@@ -92,11 +95,51 @@ class FactData {
 class GPV {
   final String name;
   final List<ScheduleItem> scheduleItems;
+  List<OutageSpan> outages = [];
 
   GPV({
     required this.name,
     required this.scheduleItems,
   });
+
+  generateOutageSpans() {
+    bool currentState = true;
+    for (int i = 0; i < scheduleItems.length; i++) {
+      if (currentState) {
+        if (scheduleItems[i].value == -2) {
+          outages.add(OutageSpan());
+          outages.last.from = TimeOfDay(hour: i, minute: 0);
+          currentState = false;
+          continue;
+        }
+        if (scheduleItems[i].value == -1) {
+          outages.add(OutageSpan());
+          outages.last.from = TimeOfDay(hour: i, minute: 30);
+          currentState = false;
+          continue;
+        }
+      } else {
+        if (scheduleItems[i].value == 2) {
+          outages.last.to = TimeOfDay(hour: i, minute: 0);
+          currentState = true;
+          continue;
+        }
+        if (scheduleItems[i].value == -1) {
+          outages.last.to = TimeOfDay(hour: i, minute: 0);
+          currentState = true;
+          continue;
+        }
+        if (scheduleItems[i].value == 1) {
+          outages.last.to = TimeOfDay(hour: i, minute: 30);
+          currentState = true;
+          continue;
+        }
+      }
+    }
+    if (outages.last.to == null) {
+      outages.last.to = TimeOfDay(hour: 23, minute: 59);
+    }
+  }
 }
 
 class Preset {
@@ -128,4 +171,9 @@ class Preset {
       timeType: parsedTimeType,
     );
   }
+}
+
+class OutageSpan {
+  late TimeOfDay from;
+  TimeOfDay? to;
 }

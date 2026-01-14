@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../helpers/app_settings.dart';
 import '../providers/schedule_provider.dart';
 import '../widgets/graph_tutorial.dart';
-import '../widgets/schedule_change_dialog.dart';
 
 class GraphScreen extends StatefulWidget {
   static const String routeName = '/graph';
@@ -44,7 +42,6 @@ class _GraphScreenState extends State<GraphScreen> {
                       // _topTimeRow(context, sp.schedule[0]),
                       // ...sp.schedule.map((e) => ScheduleRow(power_schedule_day: e)).toList(),
                       SizedBox(height: 32),
-                      TextButton(onPressed: () => _getModalWindow(context), child: Text('Редагувати графік'))
                     ],
                   );
                 }
@@ -55,16 +52,5 @@ class _GraphScreenState extends State<GraphScreen> {
         ),
       ),
     );
-  }
-
-  Future<dynamic> _getModalWindow(BuildContext context) {
-    return showModalBottomSheet(context: context, builder: (_) => ScheduleChangeDialog());
-  }
-
-  Future<void> checkTutorial() async {
-    final tutorialSeen = await AppSettings.getTutorialSeen();
-    if (!tutorialSeen) {
-      showModalBottomSheet(context: context, builder: (_) => GraphTutorial());
-    }
   }
 }

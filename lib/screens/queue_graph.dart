@@ -47,9 +47,12 @@ class _QueueGraphState extends State<QueueGraph> {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Text(DateFormat('d MMMM y').format(sp.scheduleResponse!.fact.data.date)),
-                        SizedBox(
-                          height: 16,
-                        ),
+                        SizedBox(height: 16),
+                        Text('Заплановані відключення:'),
+                        Container(
+                            padding: EdgeInsets.symmetric(horizontal: 16),
+                            child: Text('(відключення можливе за пів години до, та пів години після вказаного часу)')),
+                        SizedBox(height: 16),
                         // _topTimeRow(context, sp.qSchedule[0]),
                         ...sp.scheduleResponse!.fact.data.gpvList
                             .map((e) => QRow(
